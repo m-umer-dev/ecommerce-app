@@ -13,6 +13,7 @@ const Shop = () => {
 
   return (
     <div>
+        
       {/* <Header /> */}
       {/* <Box component="img" src={shopBanner} alt="logo" sx={style.box}></Box> */}
       {/* display: 'flex', justifyContent: 'center', alignItems:'center',padding: '40px' */}

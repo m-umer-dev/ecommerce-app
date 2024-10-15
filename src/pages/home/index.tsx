@@ -4,6 +4,7 @@ import { style } from "./styles";
 import banner from "../../assets/banner.jpg";
 import Shop from "../shop/shop";
 import Footer from "../../components/footer";
+import Carousele from "../../components/carousel/carousel";
 
 const Home = () => {
   return (
@@ -11,6 +12,7 @@ const Home = () => {
       <Header />
       
       <Box component="img" src={banner} alt="logo" sx={style.box}/>
+      <Carousele/>
       <Shop/>
       <Footer />
     

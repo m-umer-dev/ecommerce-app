@@ -54,9 +54,9 @@ const Header = (props: Props) => {
     if (item === "Shop") {
       navigate("/shop");
     } else if (item === "Home") {
-      navigate("/home");
+      navigate("/");
     } else if (item === "About") {
-      navigate("/about");
+      navigate("/blogs");
     } else if (item === "Contact") {
       navigate("/contact");
     }
@@ -71,11 +71,11 @@ const Header = (props: Props) => {
         Furnior
       </Typography>
       <Divider />
-      <List>
+      <List sx={{color: 'black'}}>
         {navItems.map((item) => (
-          <ListItem key={item} disablePadding>
-            <ListItemButton sx={{ textAlign: "center" }}>
-              <ListItemText primary={item} />
+          <ListItem sx={{color: 'black'}} key={item} disablePadding>
+            <ListItemButton sx={{color: 'black', textAlign: "center" }}>
+              <ListItemText  sx={{color: 'black'}} primary={item} />
             </ListItemButton>
           </ListItem>
         ))}
@@ -86,9 +86,9 @@ const Header = (props: Props) => {
   const container =
     window !== undefined ? () => window().document.body : undefined;
   return (
-    <Box sx={{ display: "flex" }}>
+    <Box sx={{ display: "flex", }}>
       <CssBaseline />
-      <AppBar component="nav">
+      <AppBar component="nav" sx={{ background:'white', color: 'black'}}>
         <Toolbar>
           <IconButton
             color="inherit"
@@ -99,14 +99,15 @@ const Header = (props: Props) => {
           >
             <MenuIcon />
           </IconButton>
-          <Box sx={{ margin: "10px" }}>
+          <Box sx={{display:'flex',flexGrow: 1, margin: "10px" }}>
             <Box component="img" src={logo} alt="logo" sx={style.logo} />
+            <Typography sx={{padding:'5px'}}>Furniro</Typography>
           </Box>
-          <Typography>Furniro</Typography>
+         
 
           <Box sx={{ flexGrow: 1, display: { xs: "none", sm: "block" } }}>
             {navItems.map((item) => (
-              <Button  key={item} sx={{ color: "#ffffff" }}  onClick={()=>goTo(item)}>
+              <Button  key={item} sx={{ color: "black" }}  onClick={()=>goTo(item)}>
                 {item}
               </Button>
             ))}
@@ -118,7 +119,7 @@ const Header = (props: Props) => {
             sx={{
               width: "20%",
               padding: "5px",
-              display: { xs: "none", sm: "block" },
+              display: { lg: 'flex',xs: "none", sm: "none" },
             }}
           >
             <IconButton aria-label="user" component={Link} to="/shop">

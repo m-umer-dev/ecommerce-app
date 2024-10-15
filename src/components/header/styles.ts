@@ -2,11 +2,12 @@
 export const style = {
     appbar: {
         backgroundColor: 'white',
-        position: 'static'
+        position: 'static',
+       
     },
     container: {
         maxWidth: "xl",
-
+       
     },
     AdbIcon: {
         display: {

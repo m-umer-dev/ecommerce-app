@@ -12,6 +12,7 @@ import {
 import Shop from './pages/shop/shop';
 import Home from './pages/home';
 import ItemCard from './components/productCard/itemCard';
+import Blogs from './components/blogs/blogs';
 
 const router = createBrowserRouter([
   {
@@ -21,6 +22,10 @@ const router = createBrowserRouter([
   {
     path: "shop",
     element: <Shop/>,
+  },
+  {
+    path: "blogs",
+    element: <Blogs/>
   },
   {
     path: '*',
