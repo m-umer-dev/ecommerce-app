@@ -10,15 +10,7 @@ const Blogs = () => {
     const allBlog = useSelector((state: any) => state.blogs.allBlogs);
   return (
 
-        // <Header/>
-        // <BlogCard
-        // image=''
-        // admin='umer'
-        // postDate='14 oct 2024'
-        // tag='wood'
-        // postTitle="first post"
-        // postDetail="skdflsdjflsjfsklfjklsjfls"/>
-        // <Footer/>
+       
 
         <div>
             <Header/>

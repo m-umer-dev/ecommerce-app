@@ -12,6 +12,8 @@ import { style } from "./styles";
 
 const Footer = () => {
   return (
+    <>
+     <Divider variant="fullWidth"  />
     <Grid2
       container
       spacing={10}
@@ -75,6 +77,8 @@ const Footer = () => {
         </Typography>
       </Grid2>
     </Grid2>
+    </>
+   
   );
 };
 

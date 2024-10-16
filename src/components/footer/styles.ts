@@ -6,7 +6,7 @@ export const style = {
         display: 'flex',
         justifyContent: 'center',
         // alignItem: 'space-evenly',
-        height: '505px',
+        height: '400px',
         padding: '40px',
         textAlign: 'left',
 

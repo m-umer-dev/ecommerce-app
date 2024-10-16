@@ -2,13 +2,38 @@ import { createSlice } from '@reduxjs/toolkit'
 import type { PayloadAction } from '@reduxjs/toolkit'
 import image1 from "../../assets/products/image 1.png";
 
-
-export interface ProductState {
-    product: any; 
-    products: any;
-    inspiration: any;
-    categories: any;
-}
+interface Product {
+    id: number;
+    name: string;
+    description: string;
+    price: number;
+    discountPrice: number;
+    image: string;
+    discount: string;
+    overlay?:string;
+  }
+  
+  interface Inspiration {
+    title: string;
+    image: string;
+    category: string;
+    overlay?:string;
+  }
+  
+  interface Category {
+    name: string;
+    image: string;
+    overlay?:string;
+  }
+  
+  
+  export interface ProductState {
+    product: Product[];
+    products: Product[];
+    inspiration: Inspiration[];
+    categories: Category[];
+  }
+  
 
 const initialState: ProductState = {
     product: [
@@ -566,9 +591,11 @@ export const productSlice = createSlice({
   initialState,
   reducers: {
    
-    setProducts: (state, action: PayloadAction<any>) => {
+    setProducts: (state, action: PayloadAction<Product[]>) => {
         state.product = action.payload;
       },
+
+
   },
 })
 

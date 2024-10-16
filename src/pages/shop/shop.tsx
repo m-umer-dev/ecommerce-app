@@ -7,6 +7,7 @@ import shopBanner from "../../assets/shopBanner.jpg";
 import { style } from "./styles";
 import Header from "../../components/header";
 import Footer from "../../components/footer";
+import Badges from "../../components/badges/badges";
 
 const Shop = () => {
   const allProducts = useSelector((state: any) => state.product.product);
@@ -17,7 +18,7 @@ const Shop = () => {
       {/* <Header /> */}
       {/* <Box component="img" src={shopBanner} alt="logo" sx={style.box}></Box> */}
       {/* display: 'flex', justifyContent: 'center', alignItems:'center',padding: '40px' */}
-      <Box sx={{ padding: "40px" }}>
+      <Box sx={{marginTop:'50px', padding: "40px" }}>
         {/*  rowSpacing={2} columnSpacing={{xl:1 , lg: 0.5, md: 4, sm: 6, xs: 12  }}  */}
         <Grid2
           container
@@ -51,6 +52,8 @@ const Shop = () => {
           ))}
         </Grid2>
       </Box>
+
+      <Badges/>
       {/* <Footer/> */}
     </div>
   );

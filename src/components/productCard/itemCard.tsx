@@ -25,11 +25,13 @@ const ItemCard = ({
   productOldPrice,
 }: productCardValues) => {
   return (
-    <Card sx={{ maxWidth: '100%', background: "#F4F5F7"}}>
+    //#F4F5F7
+    <Card sx={{ width: '280px', background: "#F4F5F7"}}>
       <CardMedia
         component="img"
         alt="Stylish cafe chair"
         height="250"
+        width="100%"
         image={productImage}
       />
 

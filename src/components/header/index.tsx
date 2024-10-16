@@ -24,7 +24,7 @@ import PersonOutlineIcon from "@mui/icons-material/PersonOutline";
 import SearchIcon from "@mui/icons-material/Search";
 import FavoriteIcon from "@mui/icons-material/Favorite";
 import ShoppingCartIcon from "@mui/icons-material/ShoppingCart";
-import { Link, useNavigate, useNavigation } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import { Navigation } from "@mui/icons-material";
 interface Props {
   /**
@@ -86,7 +86,7 @@ const Header = (props: Props) => {
   const container =
     window !== undefined ? () => window().document.body : undefined;
   return (
-    <Box sx={{ display: "flex", }}>
+    <Box sx={{ display: "flex", background:'red'}}>
       <CssBaseline />
       <AppBar component="nav" sx={{ background:'white', color: 'black'}}>
         <Toolbar>

@@ -1,68 +1,117 @@
-import React from "react";
-import image1 from "../../assets/careosel1.png";
+import React, { useEffect, useState } from "react";
+import image1 from "../../assets/careosel1 .png";
 import image2 from "../../assets/careosel2.png";
 import image3 from "../../assets/careosel3.png";
-import { Carousel } from "react-responsive-carousel";
-import "react-responsive-carousel/lib/styles/carousel.min.css";
-import { Grid, Typography } from "@mui/material";
+import { Box, Button, Grid2, Typography } from "@mui/material";
+import CustomButton from "../customButtons/customButton";
+import {style} from './styles'
 
 const Carousele = () => {
+  const images = [image1, image2, image3];
+  const [currentImageIndex, setCurrentImageIndex] = useState(0);
+  useEffect(() => {
+    const autoPlay = setInterval(() => {
+      setCurrentImageIndex((prevIndex) =>
+        prevIndex === images.length - 1 ? 0 : prevIndex + 1
+      );
+    }, 3000);
+    return () => clearInterval(autoPlay);
+  }, [images.length]);
+
   return (
-    <Grid
+    <Grid2
       container
       spacing={2}
       sx={{
         display: "flex",
         justifyContent: "center",
         alignItems: "center",
-        background: "green",
+        background: "#FCF8F3",
+        padding: "40px",
         margin: "20px",
       }}
+      size={{ xl: 2, lg: 3, md: 4, sm: 3, xs: 12 }}
     >
-      {/* Left Side Text */}
-      <Grid
-        item
-        xs={12}
-        md={6}
+      <Box
         sx={{
-          background: "white",
+        //   background: "white",
           padding: "20px",
+          maxWidth: "350px",
         }}
+        
       >
-        <Typography variant="body1">
-          Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris tempor 
-          nulla quis eros convallis, ut vestibulum ex fringilla. 
+        <Typography sx={style.title}>
+        50+ Beautiful rooms 
+        inspiration
         </Typography>
-      </Grid>
+        <Typography sx={style.subTitle}>
 
-      {/* Right Side Carousel */}
-      <Grid
-        item
-        xs={12}
-        md={6}
+          Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris tempor
+          nulla quis eros convallis, ut vestibulum ex fringilla.
+        </Typography>
+
+        <Button >
+            <CustomButton buttonText="Explore More"/>
+        </Button>
+      </Box>
+
+      <Box
         sx={{
           display: "flex",
           justifyContent: "center",
-          background: "red",
+          alignItems: "center",
+          //   background: "red",
           padding: "20px",
+          width: "50%",
         }}
       >
-        <Carousel autoPlay width="100%">
-          <div>
-            <img alt="carousel-item-1" src={image1} style={{ width: "100%", height: "200px", objectFit: "cover" }} />
-            <p className="legend">Legend 1</p>
-          </div>
-          <div>
-            <img alt="carousel-item-2" src={image2} style={{ width: "100%", height: "200px", objectFit: "cover" }} />
-            <p className="legend">Legend 2</p>
-          </div>
-          <div>
-            <img alt="carousel-item-3" src={image3} style={{ width: "100%", height: "200px", objectFit: "cover" }} />
-            <p className="legend">Legend 3</p>
-          </div>
-        </Carousel>
-      </Grid>
-    </Grid>
+        <Box sx={{ width: "200px", height: "300px", marginRight: "20px" }}>
+          <img
+            alt={`carousel-item-${currentImageIndex + 1}`}
+            src={images[currentImageIndex]}
+            style={{
+              width: "100%",
+              height: "100%",
+              objectFit: "cover",
+            }}
+          />
+        </Box>
+
+        <Box
+          sx={{
+            display: "flex",
+            flexDirection: "row",
+            justifyContent: "center",
+            alignItems: "center",
+            gap: "10px",
+          }}
+        >
+          {images.map((img, index) => (
+            <Box
+              key={index}
+              onClick={() => setCurrentImageIndex(index)}
+              sx={{
+                border:
+                  currentImageIndex === index ? "" : "none",
+                cursor: "pointer",
+                opacity: currentImageIndex === index ? 1 : 0.6,
+              }}
+            >
+              <img
+                alt={`thumbnail-${index + 1}`}
+                src={img}
+                style={{
+                    marginTop: '0px',
+                  width: "100px", 
+                  height: "220px", 
+                  objectFit: "cover",
+                }}
+              />
+            </Box>
+          ))}
+        </Box>
+      </Box>
+    </Grid2>
   );
 };
 
