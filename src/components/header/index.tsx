@@ -131,7 +131,7 @@ const Header = (props: Props) => {
             <IconButton aria-label="Favorite" component={Link} to="/shop">
               <FavoriteIcon />
             </IconButton>
-            <IconButton aria-label="cart" component={Link} to="/shop">
+            <IconButton aria-label="cart" component={Link} to="/cart">
               <ShoppingCartIcon />
             </IconButton>
           </Box>

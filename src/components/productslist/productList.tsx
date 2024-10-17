@@ -3,7 +3,7 @@ import { style } from "./styles";
 import { Box, Button, Grid2, Typography } from "@mui/material";
 import { useSelector } from "react-redux";
 import ItemCard from "../productCard/itemCard";
-import image1 from "../../assets/products/image 1.png";
+import image1 from "../../assets/products/image1.png";
 import ShowMore from "../customButtons/showMore";
 
 

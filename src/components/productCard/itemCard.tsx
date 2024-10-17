@@ -1,11 +1,8 @@
 import * as React from "react";
 import Card from "@mui/material/Card";
-import CardActions from "@mui/material/CardActions";
 import CardContent from "@mui/material/CardContent";
 import CardMedia from "@mui/material/CardMedia";
-import Button from "@mui/material/Button";
 import Typography from "@mui/material/Typography";
-import image1 from "../../assets/products/image 1.png";
 import { style } from "../productCard/styles";
 import { Box } from "@mui/material";
 
@@ -26,11 +23,11 @@ const ItemCard = ({
 }: productCardValues) => {
   return (
     //#F4F5F7
-    <Card sx={{ width: '280px', background: "#F4F5F7"}}>
+    <Card sx={{ maxWidth: '280px',width:'100%', background: "#F4F5F7"}}>
       <CardMedia
         component="img"
         alt="Stylish cafe chair"
-        height="250"
+        height="150"
         width="100%"
         image={productImage}
       />

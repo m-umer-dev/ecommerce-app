@@ -9,6 +9,9 @@ import Header from "./components/header";
 import Contact from "./pages/contact/contact";
 import Footer from "./components/footer";
 import UsersRecord from "./pages/usersQueries/usersRecord";
+import CheckOut from "./pages/checkOut/checkOut";
+import Cart from "./pages/cart/cart";
+import ProductView from "./pages/productDisplay/productView";
 
 const Layout = () => (
   <>
@@ -33,12 +36,25 @@ function App() {
           element: <Shop />,
         },
         {
+          path: "viewproduct/:Itemid",
+          element: <ProductView />,
+        },
+        {
+          path: "/cart",
+          element: <Cart />,
+        },
+        {
           path: "/blogs",
           element: <Blogs />,
         },
         {
           path: "/contact",
           element: <Contact/>,
+
+        },
+        {
+          path: "/checkOut",
+          element: <CheckOut/>,
 
         },
         {

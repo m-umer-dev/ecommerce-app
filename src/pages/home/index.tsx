@@ -1,22 +1,30 @@
 import { Box } from "@mui/material";
-import { style } from "./styles";
 import banner from "../../assets/banner.jpg";
-import Footer from "../../components/footer";
 import Carousele from "../../components/carousel/carousel";
 import Categories from "../../components/category/categoryShow";
 import { ProductList } from "../../components/productslist/productList";
 import ImageGallery from "../../components/imageGallery/imagesGallery";
+import Cart from "../cart/cart";
 
 const Home = () => {
   return (
     <>
-      <Box component="img" src={banner} alt="logo" sx={style.box}/>
+    
+    <Box
+        sx={{
+          backgroundImage: `url(${banner})`,
+          backgroundSize: "cover",
+          backgroundPosition: "center",
+          backgroundRepeat: "no-repeat",
+          marginTop: "66px",
+          height: "400px",
+        }}
+      ></Box>
       
       <Categories/>
       <ProductList/>
       <Carousele/>
       <ImageGallery/>
-      {/* <Footer /> */}
     
     </>
   );

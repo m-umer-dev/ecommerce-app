@@ -8,7 +8,7 @@ interface usersData {
     message: string;
   }
 
-  export interface UserState {
+   interface UserState {
     allUsers: usersData[];
     
   }

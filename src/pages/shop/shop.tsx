@@ -1,10 +1,11 @@
 import React from "react";
 import ItemCard from "../../components/productCard/itemCard";
-import image1 from "../../assets/products/image 1.png";
+import image1 from "../../assets/products/image1.png";
 import { useSelector } from "react-redux";
 import { Box, Grid2 } from "@mui/material";
 import shopBanner from "../../assets/shopBanner.jpg";
 import { style } from "./styles";
+import contactImage from "../../assets/contactBanner.jpg";
 import Header from "../../components/header";
 import Footer from "../../components/footer";
 import Badges from "../../components/badges/badges";
@@ -14,15 +15,24 @@ const Shop = () => {
 
   return (
     <div>
-        
+      <Box
+        sx={{
+          backgroundImage: `url(${contactImage})`,
+          backgroundSize: "cover",
+          backgroundPosition: "center",
+          backgroundRepeat: "no-repeat",
+          marginTop: "66px",
+          height: "400px",
+        }}
+      ></Box>
       {/* <Header /> */}
       {/* <Box component="img" src={shopBanner} alt="logo" sx={style.box}></Box> */}
       {/* display: 'flex', justifyContent: 'center', alignItems:'center',padding: '40px' */}
-      <Box sx={{marginTop:'50px', padding: "40px" }}>
+      <Box sx={{ marginTop: "50px", padding: "40px" }}>
         {/*  rowSpacing={2} columnSpacing={{xl:1 , lg: 0.5, md: 4, sm: 6, xs: 12  }}  */}
         <Grid2
           container
-          spacing={0.5}
+          spacing={2}
           rowSpacing={2}
           columnSpacing={{ xl: 0.5, lg: 0.5, md: 4, sm: 6, xs: 12 }}
         >
@@ -53,7 +63,7 @@ const Shop = () => {
         </Grid2>
       </Box>
 
-      <Badges/>
+      <Badges />
       {/* <Footer/> */}
     </div>
   );

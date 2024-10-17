@@ -1,6 +1,15 @@
 import { createSlice } from '@reduxjs/toolkit'
 import type { PayloadAction } from '@reduxjs/toolkit'
-import image1 from "../../assets/products/image 1.png";
+import image1 from "../../assets/products/image1.png";
+import image2 from "../../assets/products/image2.png";
+
+import image3 from "../../assets/products/image3.png";
+import image4 from "../../assets/products/image4.png";
+import image6 from "../../assets/products/image6.png";
+
+import image7 from "../../assets/products/image7.png";
+import image8 from "../../assets/products/image8.png";
+
 
 interface Product {
     id: number;
@@ -52,7 +61,7 @@ const initialState: ProductState = {
           description: "Stylish cafe chair",
           price: 2500000, 
           discountPrice: 3500000, 
-          image: image1,
+          image: image2,
           discount: "New",
         },
         {
@@ -61,7 +70,7 @@ const initialState: ProductState = {
           description: "Stylish cafe chair",
           price: 2500000, 
           discountPrice: 3500000, 
-          image: image1,
+          image: image3,
           discount: "New",
         },
         {
@@ -70,7 +79,7 @@ const initialState: ProductState = {
           description: "Stylish cafe chair",
           price: 2500000, 
           discountPrice: 3500000, 
-          image: image1,
+          image: image4,
           discount: "New",
         },
         {
@@ -88,7 +97,7 @@ const initialState: ProductState = {
           description: "Stylish cafe chair",
           price: 2500000, 
           discountPrice: 3500000, 
-          image: image1,
+          image: image6,
           discount: "New",
         },
         {
@@ -97,7 +106,7 @@ const initialState: ProductState = {
           description: "Stylish cafe chair",
           price: 2500000, 
           discountPrice: 3500000, 
-          image: image1,
+          image: image7,
           discount: "New",
         },
         {
@@ -106,7 +115,7 @@ const initialState: ProductState = {
           description: "Stylish cafe chair",
           price: 2500000, 
           discountPrice: 3500000, 
-          image: image1,
+          image: image8,
           discount: "New",
         },
         {
@@ -124,7 +133,7 @@ const initialState: ProductState = {
           description: "Stylish cafe chair",
           price: 2500000, 
           discountPrice: 3500000, 
-          image: image1,
+          image: image2,
           discount: "New",
         },
         {
@@ -133,7 +142,7 @@ const initialState: ProductState = {
           description: "Stylish cafe chair",
           price: 2500000, 
           discountPrice: 3500000, 
-          image: image1,
+          image: image3,
           discount: "New",
         },
         {
@@ -142,7 +151,7 @@ const initialState: ProductState = {
           description: "Stylish cafe chair",
           price: 2500000, 
           discountPrice: 3500000, 
-          image: image1,
+          image: image4,
           discount: "New",
         },
         {
@@ -160,7 +169,7 @@ const initialState: ProductState = {
           description: "Stylish cafe chair",
           price: 2500000, 
           discountPrice: 3500000, 
-          image: image1,
+          image: image6,
           discount: "New",
         },
         {
@@ -169,7 +178,7 @@ const initialState: ProductState = {
           description: "Stylish cafe chair",
           price: 2500000, 
           discountPrice: 3500000, 
-          image: image1,
+          image: image7,
           discount: "New",
         },
         {
@@ -178,7 +187,7 @@ const initialState: ProductState = {
           description: "Stylish cafe chair",
           price: 2500000, 
           discountPrice: 3500000, 
-          image: image1,
+          image: image8,
           discount: "New",
         },
         {
@@ -263,7 +272,7 @@ const initialState: ProductState = {
           description: "Stylish cafe chair",
           price: 2500000, 
           discountPrice: 3500000, 
-          image: image1,
+          image: image2,
           discount: "-30%",
         //   overlay: overlay,
         },
@@ -273,7 +282,7 @@ const initialState: ProductState = {
           description: "Stylish cafe chair",
           price: 2500000, 
           discountPrice: 3500000,
-          image: image1,
+          image: image3,
           discount: "New",
           overlay: image1,
         },
@@ -283,7 +292,7 @@ const initialState: ProductState = {
           description: "Stylish cafe chair",
           price: 2500000, 
           discountPrice: 3500000, 
-          image: image1,
+          image: image4,
           discount: "-50%",
         //   overlay: overlay,
         },
@@ -303,7 +312,7 @@ const initialState: ProductState = {
           description: "Stylish cafe chair",
           price: 2500000, 
           discountPrice: 3500000, 
-          image: image1,
+          image: image6,
           discount: "New",
         //   overlay: overlay,
         },
@@ -313,7 +322,7 @@ const initialState: ProductState = {
           description: "Stylish cafe chair",
           price: 2500000, 
           discountPrice: 3500000, 
-          image: image1,
+          image: image7,
           discount: "New",
         //   overlay: overlay,
         },
@@ -323,7 +332,7 @@ const initialState: ProductState = {
           description: "Stylish cafe chair",
           price: 2500000, 
           discountPrice: 3500000, 
-          image: image1,
+          image: image8,
           discount: "New",
         //   overlay: overlay,
         },

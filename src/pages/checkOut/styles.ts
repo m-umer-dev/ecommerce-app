@@ -1,6 +1,6 @@
 import { display, padding, textAlign } from '@mui/system';
 export const style = {
-  
+
     mainBox: {
         // background: 'red',
         marginTop: '15px',
@@ -10,6 +10,16 @@ export const style = {
         textAlign: 'center',
         padding: '50px',
     },
+    billTitle: {
+
+        marginBottom: '20px',
+        fontFamily: 'Poppins',
+        fontSize: '36px',
+        fontWeight: '600',
+        lineHeight: '54px',
+        textAlign: 'left',
+
+    },
     title: {
         fontFamily: "Poppins",
         fontSize: "36px",
@@ -18,22 +28,22 @@ export const style = {
         textAlign: 'center',
 
     },
-    subTitle:{
+    subTitle: {
         fontFamily: "Poppins",
         fontSize: "16px",
         fontWeight: "400",
         lineHeight: '24px',
         textAlign: 'center',
         color: '#9F9F9F',
-        padding:'20px',
+        padding: '20px',
         marginBottom: '10px',
     },
-    icons:{
+    icons: {
         // background: 'white',
         marginTop: '10px',
         marginBottom: '-20px',
     },
-    shopDetailTitle:{
+    shopDetailTitle: {
 
         fontFamily: "Poppins",
         fontSize: "24px",
@@ -41,10 +51,10 @@ export const style = {
         lineHeight: '36px',
         textAlign: 'left',
         marginLeft: '30px',
-       
+
 
     },
-    shopDetailSubTitle:{
+    shopDetailSubTitle: {
         fontFamily: "Poppins",
         fontSize: "16px",
         fontWeight: "400",
