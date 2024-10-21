@@ -1,29 +1,14 @@
-import * as React from "react";
+import React from 'react'
 import Card from "@mui/material/Card";
 import CardContent from "@mui/material/CardContent";
 import CardMedia from "@mui/material/CardMedia";
 import Typography from "@mui/material/Typography";
 import { style } from "../productCard/styles";
 import { Box } from "@mui/material";
-
-interface productCardValues {
-  productId: number;
-  productImage?: string;
-  productTitle: string;
-  productFeature: string;
-  productPrice: string;
-  productOldPrice: string;
-}
-const ItemCard = ({
-  productImage,
-  productTitle,
-  productFeature,
-  productPrice,
-  productOldPrice,
-}: productCardValues) => {
+const CartCard = () => {
   return (
     //#F4F5F7
-    <Card sx={{ width: '285px', height:"380px", background: "#F4F5F7"}}>
+    <Card sx={{ width: '555px', height:"380px", background: "#F4F5F7"}}>
       <CardMedia
         component="img"
         alt="Stylish cafe chair"
@@ -44,7 +29,7 @@ const ItemCard = ({
         </CardContent>
       </Box>
     </Card>
-  );
-};
+  )
+}
 
-export default ItemCard;
+export default CartCard

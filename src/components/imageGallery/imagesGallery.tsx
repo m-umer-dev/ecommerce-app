@@ -1,4 +1,4 @@
-import { Box, Typography } from "@mui/material";
+import { Box, Grid2, Typography } from "@mui/material";
 import React from "react";
 import { style } from "./styles";
 
@@ -8,13 +8,13 @@ import ImageListItemBar from '@mui/material/ImageListItemBar';
 
 const ImageGallery = () => {
   return (
-    <Box sx={style.mainBox}>
+    <Grid2 sx={style.mainBox}  >
       
         <Typography sx={style.smallTitle}>Share your setup with</Typography>
         <Typography sx={style.imageTag}>#FuniroFurniture</Typography>
      
 
-      <Box sx={{ width: '100%', height: 550, overflowY: 'hidden' }}>
+      <Box sx={{ width: '100%', height: 500, overflowY: 'hidden',overflowX: 'hidden' }}>
       <ImageList variant="woven" cols={8} gap={8}>
         {itemData.map((item) => (
           <ImageListItem key={item.img}>
@@ -30,7 +30,7 @@ const ImageGallery = () => {
     </Box>
 
 
-    </Box>
+    </Grid2>
   );
 };
 

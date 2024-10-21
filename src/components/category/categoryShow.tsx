@@ -9,7 +9,7 @@ interface categoryValues {
 }
 const Categories = () => {
   return (
-    <div>
+    <Box sx={style.contentBox}>
       <Grid2 container spacing={0.5} sx={style.mainBox}>
         <Box sx={style.mainBox}>
           <Typography sx={style.title}>Browse The Range</Typography>
@@ -93,7 +93,7 @@ const Categories = () => {
           </Grid2>
         </Box>
       </Grid2>
-    </div>
+    </Box>
   );
 };
 

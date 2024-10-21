@@ -1,7 +1,6 @@
 export const style = {
     mainBox:{
         display:'flex',
-       
         flexDirection: "column",
         alignContent: "center",
         alignItems: "center",

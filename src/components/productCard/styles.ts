@@ -1,17 +1,18 @@
+import { height } from '@mui/system';
 
 export const style = {
     productDetail: {
         display: 'flex',
         flexDirection: 'column',
         alignItems: 'flex-start',
-        padding: '2px 2px 0px 2px ',
+        // padding: '2px 2px 0px 2px ',
     },
     productTitle: {
         color: 'black',
         fontFamily: 'Poppins',
         fontWeight: 600,
         fontSize: '18px',
-        lineHeight: '28.8px',
+        lineHeight: '22.8px',
         //   marginBottom: '4px',
     },
     productFeature: {
@@ -19,11 +20,17 @@ export const style = {
         fontFamily: 'Poppins',
         fontWeight: 500,
         fontSize: '14px',
-        lineHeight: '24px',
+        marginTop: '5px',
+        lineHeight: '15px',
 
     },
     priceContent: {
         display: 'flex',
+        // flexGrow: 1,
+        // background: 'red',
+        width: '100%',
+        alignItems: 'center',
+        flexDirection: 'flex-start',
         justifyContent: "space-between",
 
     },
@@ -32,9 +39,10 @@ export const style = {
         fontFamily: 'Poppins',
         fontWeight: 600,
         fontSize: '18px',
-        lineHeight: '30px',
+        lineHeight: '20px',
         color: 'black',
-        marginRight: '20px'
+        // marginRight: '10px'
+
     },
     productOldPrice: {
         fontFamily: 'Poppins',
@@ -43,7 +51,25 @@ export const style = {
         lineHeight: '24px',
         textDecoration: 'line-through',
         color: '#B0B0B0',
-        marginLeft: 'auto',
+        // marginLeft: 'auto',
     },
+
+    iconText: {
+        fontFamily: 'Poppins',
+        fontSize: '16px',
+        fontWeight: '600',
+        lineHeight: '24px',
+        textAlign: 'left',
+        color: 'white',
+
+    },
+    btnText: {
+        fontFamily: 'Poppins',
+        fontSize: '16px',
+        fontWeight: '600',
+        lineHeight: '24px',
+        textAlign: 'left',
+    }
+
 }
 

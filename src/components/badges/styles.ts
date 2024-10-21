@@ -1,26 +1,28 @@
-import { fontSize, height } from '@mui/system';
+import { fontSize, height, textAlign } from '@mui/system';
 export const style = {
     mainBox: {
         background: '#FAF3EA',
         display: 'flex',
-        justifyContent: 'space-evenly',
+        justifyContent: 'center',
         alignContent: "center",
         alignItems: "center",
-        padding: "30px",
+        padding: '40px'
 
 
     },
     contentBox: {
         display: 'flex',
-        justifyContent: 'center',
         alignContent: "center",
         alignItems: "center",
+        textAlign: 'center',
+        margin: '5px',
+
 
     },
 
-    iconDetail: {
-        fontSize: '4.5em',
-    },
+    // iconDetail: {
+    //     fontSize: '15px',
+    // },
     title: {
         fontFamily: 'Poppins',
         fontSize: "25px",

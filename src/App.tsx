@@ -41,7 +41,7 @@ function App() {
         },
         {
           path: "/cart",
-          element: <Cart />,
+          element: <Cart productId={0} productTitle={""} productFeature={""} productPrice={""} productOldPrice={""} />
         },
         {
           path: "/blogs",

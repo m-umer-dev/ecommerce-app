@@ -1,20 +1,23 @@
+import { width } from '@mui/system';
 export const style = {
+    contentBox: {
+        width: '100%',
+
+    },
     mainBox: {
         display: "flex",
         flexDirection: "column",
+        justifyContent: 'center',
         alignContent: "center",
         alignItems: "center",
-        margin:'40px',
-        // background: 'green'
-
+        padding: '40px',
     },
     categoryBox: {
-       display: "flex",
-    //    background: 'red',
-       justifyContent: 'center',
-       alignContent: "center",
+        display: "flex",
+        justifyContent: 'center',
+        alignContent: "center",
         alignItems: "center",
-   
+
 
     },
     title: {
@@ -22,7 +25,9 @@ export const style = {
         fontSize: '32px',
         fontWeight: '700',
         lineHeight: '48px',
-        textAlign: 'left',
+        textAlign: 'center',
+
+        // textAlign: 'left',
         marginTop: '10px'
 
     },

@@ -2,22 +2,16 @@ import { border, borderRadius, display, fontSize, fontWeight, height, lineHeight
 
 export const style = {
     mainContainer: {
-        // background: 'red',
         display: 'flex',
         justifyContent: 'center',
-        // alignItem: 'space-evenly',
         height: '400px',
         padding: '40px',
         textAlign: 'left',
 
     },
     column1: {
-        // width: '20%',
-        // background: 'blue',
         display: 'flex',
         flexDirection: 'column',
-
-        // justifyContent: 'center',
     },
     logo: {
         fontFamily: 'Poppins',
@@ -33,13 +27,8 @@ export const style = {
 
     },
     column2: {
-        // width: '20%',
-        // background: 'blue',
-        // background: 'green',
         display: 'flex',
         flexDirection: 'column',
-
-        // justifyContent: 'center',
     },
     linkTitle: {
         color: '#9F9F9F',
@@ -62,18 +51,12 @@ export const style = {
 
     },
     column3: {
-        // width: '20%',
-        // background: 'green',
         display: 'flex',
         flexDirection: 'column',
-        // justifyContent: 'center',
     },
     column4: {
-        // width: '25%',
-        // background: 'blue',
         display: 'flex',
         flexDirection: 'column',
-        // justifyContent: 'center',
     },
     subcolumn4: {
         display: 'flex',
@@ -82,7 +65,6 @@ export const style = {
     },
     buttonSubscribe: {
         borderBottom: '1px solid black ',
-        // background:"yellow",
         borderRadius: "0px",
         color: 'black',
         fontFamily: 'Poppins',

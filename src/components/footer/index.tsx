@@ -44,19 +44,22 @@ const Footer = () => {
         </Link>
       </Grid2>
 
-      <Grid2 container spacing={0.5} sx={style.column3}>
+      <Grid2 container spacing={0.5} sx={style.column2}>
         <Typography sx={style.linkTitle}>Links</Typography>
 
         <Link sx={style.linkList} href="#">
-          Payment Options
+        Payment
         </Link>
         <Link sx={style.linkList} href="#">
-          Returns
+        Returns
         </Link>
         <Link sx={style.linkList} href="#">
-          Privacy Policies
+        Privacy
         </Link>
+       
       </Grid2>
+
+    
 
       <Grid2 sx={style.column4}>
         <Typography sx={style.linkTitle}>Newsletter</Typography>
@@ -64,7 +67,7 @@ const Footer = () => {
           <TextField
             sx={style.email}
             id="standard-basic"
-            label="Standard"
+            label="Email"
             variant="standard"
           />
           <Button sx={style.buttonSubscribe}>SUBSCRIBE</Button>

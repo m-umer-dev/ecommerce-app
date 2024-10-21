@@ -5,6 +5,7 @@ import Categories from "../../components/category/categoryShow";
 import { ProductList } from "../../components/productslist/productList";
 import ImageGallery from "../../components/imageGallery/imagesGallery";
 import Cart from "../cart/cart";
+// import { Toaster } from 'react-hot-toast';
 
 const Home = () => {
   return (
@@ -20,7 +21,7 @@ const Home = () => {
           height: "400px",
         }}
       ></Box>
-      
+      {/* <Toaster/> */}
       <Categories/>
       <ProductList/>
       <Carousele/>

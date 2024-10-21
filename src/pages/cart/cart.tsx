@@ -4,10 +4,28 @@ import {style} from './styles'
 import contactImage from "../../assets/contactBanner.jpg";
 import Badges from '../../components/badges/badges';
 
+import { useDispatch, useSelector } from "react-redux";
+// import  RiDeleteBin6Line  from "../../assets/shareicon.png";
+interface CartValues {
+    productId: number;
+    productImage?: string;
+    productTitle: string;
+    productFeature: string;
+    productPrice: string;
+    productOldPrice: string;
+  }
+  
+const Cart = ({productId,productImage,productTitle,productFeature,productPrice,productOldPrice}:CartValues) => {
 
-const Cart = () => {
+    const selectedProduct = useSelector((state: any) => state.cart);
+
+//   const { cart } = useSelector((state: any) => state.cart);
+//   const dispatch = useDispatch();
+
   return (
     <>
+  
+
      <Box
           sx={{
             backgroundImage: `url(${contactImage})`,
@@ -35,11 +53,11 @@ const Cart = () => {
 
         <Grid2 sx={style.boxSubTotal}>
         <Typography sx={style.cartSubTotal}>Subtotal</Typography>
-        <Typography sx={style.subTotalPrice} >Rs:250,00</Typography>
+        <Typography sx={style.subTotalPrice} >Rs</Typography>
         </Grid2>
         <Grid2 sx={style.boxSubTotal}>
         <Typography sx={style.cartSubTotal}>Total</Typography>
-        <Typography sx={style.totalPrice} >Rs:250,00</Typography>
+        <Typography sx={style.totalPrice} >Rs:{selectedProduct.productPrice}</Typography>
         </Grid2>
 
 
