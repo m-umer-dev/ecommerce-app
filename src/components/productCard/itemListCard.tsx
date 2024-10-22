@@ -8,45 +8,43 @@ import { Box, Button, Grid2, Stack } from "@mui/material";
 import shareicon from "../../assets/shareicon.png";
 import compareicon from "../../assets/compareicon.png";
 import hearticon from "../../assets/hearticon.png";
-import { useDispatch, useSelector } from 'react-redux'; 
+import { useDispatch } from "react-redux";
 import { addToCart } from "../../redux/slices/cartSlice";
 
-interface productCardValues {
+interface ProductCardValues {
   productId: number;
   productImage?: string;
   productTitle: string;
   productFeature: string;
-  productPrice: string;
-  productOldPrice: string;
+  productPrice: string; // Keep as string for input purposes
+  productOldPrice: string; // Keep as string for input purposes
 }
 
 const ItemListCard = ({
-   productId, 
+  productId,
   productImage,
   productTitle,
   productFeature,
   productPrice,
   productOldPrice,
-}: productCardValues) => {
-    // const selectedProduct = useSelector((state: any) => state.cart);
+}: ProductCardValues) => {
+  const dispatch = useDispatch();
 
-    const dispatch = useDispatch();
+  const handleAddToCart = () => {
+    const newProduct = {
+      id: productId,
+      name: productTitle,
+      description: productFeature,
+      price: parseFloat(productPrice), // Convert to a number if it's a string
+      discountPrice: parseFloat(productOldPrice), // Convert to a number if it's a string
+      image: productImage || "",
+      discount: "New", // Static value
+      quantity: 1,
+    };
 
-    const handleAddToCart = () => {
-        const newProduct = {
-            id: productId,
-            productImage: productImage || "", 
-            productTitle,
-            productFeature,
-            productPrice,
-            productOldPrice,
-        };
-
-        console.log("dispatching add to cart", newProduct);
-        dispatch(addToCart(newProduct)); 
-    }
-
-    
+    console.log("Dispatching add to cart", newProduct);
+    dispatch(addToCart(newProduct));
+  };
 
   return (
     <Card
@@ -82,8 +80,8 @@ const ItemListCard = ({
         </CardContent>
 
         <CardContent sx={style.priceContent}>
-          <Typography sx={style.productPrice}>{productPrice}</Typography>
-          <Typography sx={style.productOldPrice}>{productOldPrice}</Typography>
+          <Typography sx={style.productPrice}>Rs {productPrice}</Typography> {/* Display prices correctly */}
+          <Typography sx={style.productOldPrice}>Rs {productOldPrice}</Typography>
         </CardContent>
       </Box>
 
@@ -96,8 +94,8 @@ const ItemListCard = ({
           left: 0,
           width: "100%",
           height: "100%",
-          backgroundColor: "rgba(0, 0, 0, 0.6)", // Black tint with opacity
-          opacity: 0, // Initially hidden
+          backgroundColor: "rgba(0, 0, 0, 0.6)",
+          opacity: 0,
           transition: "opacity 0.3s ease",
           display: "flex",
           flexDirection: "column",
@@ -105,7 +103,6 @@ const ItemListCard = ({
           alignItems: "center",
         }}
       >
-        {/* Add to Cart Button */}
         <Button
           className="centerButton"
           variant="contained"
@@ -118,8 +115,8 @@ const ItemListCard = ({
             fontWeight: "600",
             fontSize: "15px",
             textAlign: "center",
-            borderRadius: '0px',
-            mb: 2, // margin-bottom for spacing
+            borderRadius: "0px",
+            mb: 2,
           }}
           onClick={handleAddToCart}
         >
@@ -132,10 +129,9 @@ const ItemListCard = ({
             display: "flex",
             alignItems: "center",
             justifyContent: "space-evenly",
-            width: "80%", // Align icons within a specific width
+            width: "80%",
           }}
         >
-          {/* Share Icon */}
           <Grid2>
             <Box
               sx={{
@@ -151,7 +147,6 @@ const ItemListCard = ({
             </Box>
           </Grid2>
 
-          {/* Compare Icon */}
           <Grid2>
             <Box
               sx={{
@@ -167,7 +162,6 @@ const ItemListCard = ({
             </Box>
           </Grid2>
 
-          {/* Like Icon */}
           <Grid2>
             <Box
               sx={{

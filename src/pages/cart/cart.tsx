@@ -1,75 +1,76 @@
-import { Box, Grid2, Typography } from '@mui/material'
-import React from 'react'
-import {style} from './styles'
+import { Box, Grid2, Typography } from '@mui/material';
+import React from 'react';
+import { style } from './styles';
 import contactImage from "../../assets/contactBanner.jpg";
 import Badges from '../../components/badges/badges';
+import { useSelector } from "react-redux";
+import CartCard from './cartCard';
 
-import { useDispatch, useSelector } from "react-redux";
-// import  RiDeleteBin6Line  from "../../assets/shareicon.png";
 interface CartValues {
-    productId: number;
-    productImage?: string;
-    productTitle: string;
-    productFeature: string;
-    productPrice: string;
-    productOldPrice: string;
-  }
-  
-const Cart = ({productId,productImage,productTitle,productFeature,productPrice,productOldPrice}:CartValues) => {
+  id: number; 
+  image?: string;
+  name: string; 
+  price: number; 
+  quantity: number; 
+}
 
-    const selectedProduct = useSelector((state: any) => state.cart);
-
-//   const { cart } = useSelector((state: any) => state.cart);
-//   const dispatch = useDispatch();
+const Cart = () => {
+  const selectedCartItems = useSelector((state: any) => state.cart.product);
+  const cartTotal = useSelector((state: any) => state.cart.total);
 
   return (
     <>
-  
+      <Box
+        sx={{
+          backgroundImage: `url(${contactImage})`,
+          backgroundSize: "cover",
+          backgroundPosition: "center",
+          backgroundRepeat: "no-repeat",
+          marginTop: "66px",
+          height: "400px",
+        }}
+      ></Box>
 
-     <Box
-          sx={{
-            backgroundImage: `url(${contactImage})`,
-            backgroundSize: "cover",
-            backgroundPosition: "center",
-            backgroundRepeat: "no-repeat",
-            marginTop: "66px",
-            height: "400px",
-          }}
-        ></Box>
-
-<Box sx={style.mainBox}>
-        
+      <Box sx={style.mainBox}>
         <Grid2 sx={style.leftBar}>
-            <Typography sx={style.barTitle}>Product</Typography>
-            <Typography sx={style.barTitle}>Price</Typography>
-            <Typography sx={style.barTitle}>Quantity</Typography>
-            <Typography sx={style.barTitle}>SubTotal</Typography>
-
-            
+          <Typography sx={style.barTitle}>Product</Typography>
+          <Typography sx={style.barTitle}>Price</Typography>
+          <Typography sx={style.barTitle}>Quantity</Typography>
+          <Typography sx={style.barTitle}>SubTotal</Typography>
         </Grid2>
 
         <Grid2 sx={style.rightBar}>
-        <Typography sx={style.cartTitle}>Cart Totals</Typography>
-
-        <Grid2 sx={style.boxSubTotal}>
-        <Typography sx={style.cartSubTotal}>Subtotal</Typography>
-        <Typography sx={style.subTotalPrice} >Rs</Typography>
+          <Typography sx={style.cartTitle}>Cart Totals</Typography>
+          <Grid2 sx={style.boxSubTotal}>
+            <Typography sx={style.cartSubTotal}>Subtotal</Typography>
+            <Typography sx={style.subTotalPrice}>Rs: {cartTotal}</Typography>
+          </Grid2>
+          <Grid2 sx={style.boxSubTotal}>
+            <Typography sx={style.cartSubTotal}>Total</Typography>
+            <Typography sx={style.totalPrice}>Rs: {cartTotal}</Typography>
+          </Grid2>
         </Grid2>
-        <Grid2 sx={style.boxSubTotal}>
-        <Typography sx={style.cartSubTotal}>Total</Typography>
-        <Typography sx={style.totalPrice} >Rs:{selectedProduct.productPrice}</Typography>
-        </Grid2>
+      </Box>
 
+<Box sx={{display:"flex",flexDirection:'column',padding: '10px',background: 'green'}}>      
+      {selectedCartItems.map((product: CartValues) => (
+        <Box key={product.id}  sx={{display:'flex',marginLeft:'90px',padding: '5px',background:'red'}}> 
+       
+          <CartCard
+           
+            productId={product.id}
+            productImage={product.image}
+            productTitle={product.name} 
+            productPrice={product.price} 
+            quantity={product.quantity} 
+          />
+        </Box>
+      ))}
+</Box>
 
-
-            
-
-        </Grid2>
-    </Box>
-    <Badges/>
+      <Badges />
     </>
-   
-  )
-}
+  );
+};
 
-export default Cart
+export default Cart;
