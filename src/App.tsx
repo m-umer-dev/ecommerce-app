@@ -13,6 +13,12 @@ import CheckOut from "./pages/checkOut/checkOut";
 import Cart from "./pages/cart/cart";
 import ProductView from "./pages/productDisplay/productView";
 
+import '@fontsource/poppins/300.css';
+import '@fontsource/poppins/400.css';
+import '@fontsource/poppins/500.css';
+import '@fontsource/poppins/700.css';
+
+
 const Layout = () => (
   <>
     <Header />
