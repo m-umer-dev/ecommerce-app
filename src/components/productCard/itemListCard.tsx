@@ -11,6 +11,9 @@ import hearticon from "../../assets/hearticon.png";
 import { useDispatch } from "react-redux";
 import { addToCart } from "../../redux/slices/cartSlice";
 
+import { ToastContainer, toast } from 'react-toastify';
+  import 'react-toastify/dist/ReactToastify.css';
+
 interface ProductCardValues {
   productId: number;
   productImage?: string;
@@ -44,10 +47,18 @@ const ItemListCard = ({
 
     console.log("Dispatching add to cart", newProduct);
     dispatch(addToCart(newProduct));
+    
+    toast.success("Added !", {
+        position: "top-right",
+         className: 'foo-bar'
+      });
+  
+   
   };
 
   return (
     <Card
+    
       sx={{
         width: "500px",
         height: "380px",
@@ -63,7 +74,6 @@ const ItemListCard = ({
         },
       }}
     >
-      {/* Product Image */}
       <CardMedia
         component="img"
         alt={productTitle}
@@ -71,8 +81,8 @@ const ItemListCard = ({
         width="100%"
         image={productImage}
       />
+        <ToastContainer />
 
-      {/* Product Details */}
       <Box sx={style.productDetail}>
         <CardContent>
           <Typography sx={style.productTitle}>{productTitle}</Typography>
@@ -85,7 +95,6 @@ const ItemListCard = ({
         </CardContent>
       </Box>
 
-      {/* Hover Overlay */}
       <Box
         className="overlay"
         sx={{
@@ -122,8 +131,6 @@ const ItemListCard = ({
         >
           Add to Cart
         </Button>
-
-        {/* Icon Section */}
         <Box
           sx={{
             display: "flex",

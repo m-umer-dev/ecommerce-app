@@ -36,25 +36,25 @@ const Cart = () => {
           <Typography sx={style.barTitle}>Product</Typography>
           <Typography sx={style.barTitle}>Price</Typography>
           <Typography sx={style.barTitle}>Quantity</Typography>
-          <Typography sx={style.barTitle}>SubTotal</Typography>
+          {/* <Typography sx={style.barTitle}>SubTotal</Typography> */}
         </Grid2>
 
         <Grid2 sx={style.rightBar}>
           <Typography sx={style.cartTitle}>Cart Totals</Typography>
           <Grid2 sx={style.boxSubTotal}>
-            <Typography sx={style.cartSubTotal}>Subtotal</Typography>
-            <Typography sx={style.subTotalPrice}>Rs: {cartTotal}</Typography>
+            {/* <Typography sx={style.cartSubTotal}>Subtotal</Typography>
+            <Typography sx={style.subTotalPrice}>Rs: {cartTotal}</Typography> */}
           </Grid2>
           <Grid2 sx={style.boxSubTotal}>
             <Typography sx={style.cartSubTotal}>Total</Typography>
-            <Typography sx={style.totalPrice}>Rs: {cartTotal}</Typography>
+            <Typography sx={style.totalPrice}>Rs:{cartTotal}</Typography>
           </Grid2>
         </Grid2>
       </Box>
-
-<Box sx={{display:"flex",flexDirection:'column',padding: '10px',background: 'green'}}>      
+{cartTotal > 0 ?
+<Box sx={{display:"flex",flexDirection:'column',padding: '10px'}}>      
       {selectedCartItems.map((product: CartValues) => (
-        <Box key={product.id}  sx={{display:'flex',marginLeft:'90px',padding: '5px',background:'red'}}> 
+        <Box key={product.id}  sx={{display:'flex',marginLeft:'90px',padding: '5px'}}> 
        
           <CartCard
            
@@ -66,7 +66,7 @@ const Cart = () => {
           />
         </Box>
       ))}
-</Box>
+</Box> : "Cart is Empty"}
 
       <Badges />
     </>
