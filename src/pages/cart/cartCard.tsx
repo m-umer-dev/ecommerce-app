@@ -4,7 +4,7 @@ import CardContent from "@mui/material/CardContent";
 import CardMedia from "@mui/material/CardMedia";
 import Typography from "@mui/material/Typography";
 import { style } from "./styles";
-import { Box, Button, TextField } from "@mui/material";
+import { Box, TextField } from "@mui/material";
 import { useDispatch, useSelector } from "react-redux";
 import { updateQuantity, deleteFromCart } from "../../redux/slices/cartSlice";
 import DeleteIcon from "@mui/icons-material/Delete";
@@ -51,12 +51,7 @@ const CartCard = ({
     toast.error("Deleted !", {
         position: "top-right",
         className: "foo-bar",
-      });
-
-   
-  
-     
-   
+      });   
   };
 
   return (

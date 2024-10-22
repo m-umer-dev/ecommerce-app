@@ -23,9 +23,9 @@ interface blogCardValues{
 const BlogCard = ({image,admin,postDate,tag,postTitle,postDetail}:blogCardValues) => {
   return (
     <>
-    <Card sx={{ maxWidth: 845 }}>
+    <Card sx={{ width: '945px' }}>
       <CardMedia
-        sx={{ height: 140 }}
+        sx={{ height: 250 }}
         image={Image1}
         // title="green iguana"
       />

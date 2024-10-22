@@ -23,19 +23,17 @@ const Shop = () => {
   const allProducts = useSelector((state: any) => state.product.product);
 
   const [searchItem, setSearchItem] = useState("");
-  const [filteredProducts, setFilteredProducts] = useState(allProducts); // Store filtered and sorted products
-  const [isAscending, setIsAscending] = useState(""); // Track the sorting order
+  const [filteredProducts, setFilteredProducts] = useState(allProducts); 
+  const [isAscending, setIsAscending] = useState(""); 
   const [visibleProduct, setVisibleProduct] = useState(8);
   const [layout, setLayout] = useState("grid");
   console.log({ layout });
 
-  // Function to update the number of visible products
   const showMoreProduct = (event: SelectChangeEvent) => {
-    const numberToShow = parseInt(event.target.value, 10); // Convert string to number
-    setVisibleProduct(numberToShow); // Update the state with the selected number
+    const numberToShow = parseInt(event.target.value, 10); 
+    setVisibleProduct(numberToShow); 
   };
 
-  // Filter products when search input changes
   useEffect(() => {
     const filtered = allProducts.filter((product: any) =>
       product.name.toLowerCase().includes(searchItem.toLowerCase())
@@ -43,7 +41,6 @@ const Shop = () => {
     setFilteredProducts(filtered);
   }, [searchItem, allProducts]);
 
-  // Handle sorting change
   const handleChange = (event: SelectChangeEvent) => {
     const order = event.target.value as string;
 
@@ -56,8 +53,8 @@ const Shop = () => {
       return 0;
     });
 
-    setIsAscending(order); // Update the selected sorting order
-    setFilteredProducts(sortedProducts); // Update the filtered products with sorted data
+    setIsAscending(order); 
+    setFilteredProducts(sortedProducts); 
   };
 
   const handleLayoutChange = (layoutType: string) => {
@@ -89,7 +86,7 @@ const Shop = () => {
       >
         <TextField
           sx={{
-            width: { xs: "100%", sm: "50%", md: "20%" }, // 100% on extra small, 50% on small, 20% on medium and above
+            width: { xs: "100%", sm: "50%", md: "20%" }, 
           }}
           id="outlined-search"
           placeholder="Search Product"
@@ -118,7 +115,6 @@ const Shop = () => {
           </Select>
         </FormControl>
 
-        {/* Icons for layout change */}
         <Box
           sx={{
             display: "flex",
@@ -248,14 +244,6 @@ const Shop = () => {
                   display: "flex",
                   alignItems: "center",
                   justifyContent: "center",
-
-                  //  width: {
-                  //    xs: "100%", // Full width on extra small devices
-                  //    sm: layout === "list" ? "100%" : layout === "two-column" ? "50%" : "50%", // 2 columns on small devices for two-column layout, 50% for grid layout
-                  //    md: layout === "list" ? "100%" : layout === "two-column" ? "50%" : "33%", // 2 columns on medium devices for two-column layout, 33% for grid layout
-                  //    lg: layout === "list" ? "100%" : layout === "two-column" ? "40%" : "10%", // 2 columns on large devices for two-column layout, 25% for grid layout
-                  //    xl: layout === "list" ? "100%" : layout === "two-column" ? "50%" : "50%",
-                  //  },
                 }}
               >
                 <ItemListCard

@@ -140,6 +140,13 @@ export const style = {
         fontWeight: '600',
         lineHeight: '24px',
         textAlign: 'left',
+    },
+    chekOutbutton:{
+        background: 'none',
+        color: 'black',
+        borderColor: "black",
+        marginTop: '8px',
+        
     }
 
 

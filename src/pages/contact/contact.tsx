@@ -49,7 +49,6 @@ const Contact = () => {
         },
       ])
     );
-    // console.log(...allUsers)
   };
   return (
     <>
@@ -65,8 +64,7 @@ const Contact = () => {
       ></Box>
 
       <Box sx={style.mainBox}>
-        <Box>
-          <Grid2>
+          <Grid2 size={{ xl: 6 , lg: 6, md: 6, sm: 12, xs: 12 }}>
             <Typography sx={style.title}>Get In Touch With Us</Typography>
             <Typography variant="subtitle2" gutterBottom sx={style.subTitle}>
               For More Information About Our Product & Services. Please Feel
@@ -74,18 +72,18 @@ const Contact = () => {
               Out. Do Not Hesitate!
             </Typography>
           </Grid2>
-        </Box>
 
         <Box
           sx={{
             background: "white",
             display: "flex",
+            flexWrap:'wrap',
             justifyContent: "space-evenly",
           }}
         >
-          {/* Location and Phone etc */}
-          <Box maxWidth={350} sx={{ padding: "50px",}}>
-            <Grid2>
+          <Box maxWidth={350} sx={{ padding: "50px" }}>
+            <Grid2
+            >
               <Stack>
                 <LocationOnIcon sx={style.icons} />
                 <Typography sx={style.shopDetailTitle}>Address</Typography>
@@ -95,7 +93,8 @@ const Contact = () => {
               </Stack>
             </Grid2>
 
-            <Grid2>
+            <Grid2
+            >
               <Stack>
                 <PhoneIcon sx={style.icons} />
                 <Typography sx={style.shopDetailTitle}>Phone</Typography>
@@ -117,11 +116,11 @@ const Contact = () => {
           </Box>
 
           <Box>
-            <Box
+            <Grid2
               sx={{
                 maxWidth: 550,
                 background: "white",
-                padding: "50px",
+                padding: "10px",
               }}
               component="form"
               onSubmit={handleSubmit(onSubmit)}
@@ -135,7 +134,6 @@ const Contact = () => {
                 {...register("name", { required: "Enter Your Name" })}
                 sx={{
                   marginTop: "20px",
-                  width: "450px",
                   color: "white",
                 }}
               />
@@ -152,7 +150,6 @@ const Contact = () => {
                 {...register("email", { required: "email" })}
                 sx={{
                   marginTop: "20px",
-                  width: "450px",
                   color: "white",
                 }}
               />
@@ -169,7 +166,6 @@ const Contact = () => {
                 {...register("subject", { required: "Enter Subject" })}
                 sx={{
                   marginTop: "20px",
-                  width: "450px",
                   color: "white",
                 }}
               />
@@ -178,14 +174,15 @@ const Contact = () => {
               )}
 
               <TextField
-                id="outlined-multiline-static"
+                id="standard-basic"
                 label="Message"
+                variant="outlined"
+                fullWidth
                 multiline
                 type="text"
                 {...register("message", { required: "message" })}
                 sx={{
                   marginTop: "20px",
-                  width: "450px",
                   color: "white",
                 }}
                 rows={3}
@@ -194,7 +191,9 @@ const Contact = () => {
                 <span style={{ color: "red" }}>{errors.message.message}</span>
               )}
 
-              <Button
+             
+            </Grid2>
+            <Button
                 type="submit"
                 sx={{
                   marginTop: "20px",
@@ -202,14 +201,12 @@ const Contact = () => {
               >
                 <CustomButton buttonText="Submit" />
               </Button>
-            </Box>
           </Box>
         </Box>
       </Box>
 
-      <Badges/>
+      <Badges />
     </>
-   
   );
 };
 

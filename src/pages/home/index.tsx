@@ -1,11 +1,11 @@
 import { Box } from "@mui/material";
-import banner from "../../assets/banner.jpg";
+import banner from "../../assets/banner.png";
 import Carousele from "../../components/carousel/carousel";
 import Categories from "../../components/category/categoryShow";
 import { ProductList } from "../../components/productslist/productList";
 import ImageGallery from "../../components/imageGallery/imagesGallery";
-import Cart from "../cart/cart";
-// import { Toaster } from 'react-hot-toast';
+import BannerText from "../../components/banner/bannerText";
+import Shop from "../shop/shop";
 
 const Home = () => {
   return (
@@ -18,10 +18,32 @@ const Home = () => {
           backgroundPosition: "center",
           backgroundRepeat: "no-repeat",
           marginTop: "66px",
-          height: "400px",
+          height: "500px",
+          width: '100%',
+          display:'flex',
+          padding: '20px',
+          alignItems:'center',
+          justifyContent: 'flex-end',
+          
         }}
-      ></Box>
-      {/* <Toaster/> */}
+     
+      >
+         <BannerText/> 
+
+       
+      </Box>
+       {/* <Box sx={{
+         
+          display:'flex',
+          padding: '20px',
+          alignItems:'center',
+          justifyContent: 'flex-end',
+        }}>
+
+        </Box> */}
+     {/* <BannerText/> */}
+
+     
       <Categories/>
       <ProductList/>
       <Carousele/>

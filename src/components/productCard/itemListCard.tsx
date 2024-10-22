@@ -4,7 +4,7 @@ import CardContent from "@mui/material/CardContent";
 import CardMedia from "@mui/material/CardMedia";
 import Typography from "@mui/material/Typography";
 import { style } from "../productCard/styles";
-import { Box, Button, Grid2, Stack } from "@mui/material";
+import { Box, Button, Grid2, Stack, useMediaQuery } from "@mui/material";
 import shareicon from "../../assets/shareicon.png";
 import compareicon from "../../assets/compareicon.png";
 import hearticon from "../../assets/hearticon.png";
@@ -32,7 +32,8 @@ const ItemListCard = ({
   productOldPrice,
 }: ProductCardValues) => {
   const dispatch = useDispatch();
-
+ const {} = useMediaQuery("md")
+//  const matches = useMediaQuery('(max-width:285px)');
   const handleAddToCart = () => {
     const newProduct = {
       id: productId,
@@ -59,8 +60,10 @@ const ItemListCard = ({
   return (
     <Card
     
+    
+    
       sx={{
-        width: "500px",
+        width: "260px",
         height: "380px",
         background: "#F4F5F7",
         transition: "transform 0.3s, box-shadow 0.3s",
@@ -71,8 +74,9 @@ const ItemListCard = ({
         },
         "&:hover .centerButton": {
           opacity: 1,
-        },
+        },        
       }}
+
     >
       <CardMedia
         component="img"
