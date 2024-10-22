@@ -56,10 +56,10 @@ export const style = {
 
     iconText: {
         fontFamily: 'Poppins',
-        fontSize: '16px',
+        fontSize: '14px',
         fontWeight: '600',
         lineHeight: '24px',
-        textAlign: 'left',
+        // textAlign: 'left',
         color: 'white',
 
     },

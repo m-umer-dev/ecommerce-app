@@ -6,6 +6,7 @@ import ItemCard from "../productCard/itemCard";
 import image1 from "../../assets/products/image1.png";
 import ShowMore from "../customButtons/showMore";
 import ItemListCard from "../productCard/itemListCard";
+import CustomButton from "../customButtons/customButton";
 
 
 export const ProductList = () => {
@@ -99,8 +100,8 @@ export const ProductList = () => {
           </Box>
         </Box>
         {visibleProducts < allProducts.length && (
-          <Button onClick={showMoreProducts} sx={{width:'70%'}}>
-            <ShowMore buttonText="Show More" />
+          <Button onClick={showMoreProducts} >
+            <ShowMore  buttonText="Show More" />
           </Button>
         ) 
          }

@@ -151,7 +151,7 @@ const ItemListCard = ({
                 justifyContent: "center",
               }}
             >
-              <Stack sx={{ marginRight: "5px" }}>
+              <Stack sx={{ marginRight: "0px"  }}>
                 <img src={shareicon} alt="Share" />
               </Stack>
               <Typography sx={style.iconText}>Share</Typography>
@@ -166,7 +166,7 @@ const ItemListCard = ({
                 justifyContent: "center",
               }}
             >
-              <Stack sx={{ marginRight: "5px" }}>
+              <Stack sx={{ marginRight: "3px" }}>
                 <img src={compareicon} alt="Compare" />
               </Stack>
               <Typography sx={style.iconText}>Compare</Typography>
@@ -181,7 +181,7 @@ const ItemListCard = ({
                 justifyContent: "center",
               }}
             >
-              <Stack sx={{ marginRight: "5px" }}>
+              <Stack sx={{ marginRight: "3px" }}>
                 <img src={hearticon} alt="Like" />
               </Stack>
               <Typography sx={style.iconText}>Like</Typography>
