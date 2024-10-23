@@ -1,10 +1,9 @@
-import { fontSize, height, textAlign } from '@mui/system';
 export const style = {
     mainBox: {
         background: '#FAF3EA',
         display: 'flex',
+        flexWrap:"wrap",
         justifyContent: 'center',
-        alignContent: "center",
         alignItems: "center",
         padding: '40px'
 
@@ -12,23 +11,21 @@ export const style = {
     },
     contentBox: {
         display: 'flex',
-        alignContent: "center",
+        flexDirection:{xs:"column",sm:"column",md:"row",lg:"row",xl:"row"},
         alignItems: "center",
         textAlign: 'center',
-        margin: '5px',
-
+        margin: '15px',
+        width: '270px',
 
     },
 
-    // iconDetail: {
-    //     fontSize: '15px',
-    // },
     title: {
         fontFamily: 'Poppins',
-        fontSize: "25px",
+        fontSize: "20px",
         fontWeight: "600",
-        lineHeight: "37.5px",
-        textAlign: 'left',
+        lineHeight: "20px",
+        textAlign: {xs:"center",sm:"center",md:"left",lg:"left",xl:"left"},
+
 
 
     },
@@ -36,9 +33,13 @@ export const style = {
         fontFamily: 'Poppins',
         fontSize: "20px",
         fontWeight: "500",
-        lineHeight: "30px",
-        textAlign: 'left',
+        lineHeight: "20px",
+        textAlign: {xs:"center",sm:"center",md:"left",lg:"left",xl:"left"},
         color: '#898989'
+
+    },
+    imag:{
+        width: '40px',
 
     }
 

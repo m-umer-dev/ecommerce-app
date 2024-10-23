@@ -26,7 +26,6 @@ import SearchIcon from "@mui/icons-material/Search";
 import FavoriteIcon from "@mui/icons-material/Favorite";
 import ShoppingCartIcon from "@mui/icons-material/ShoppingCart";
 import { Link, useNavigate } from "react-router-dom";
-import { Navigation } from "@mui/icons-material";
 
 import "@fontsource/montserrat/300.css";
 import "@fontsource/montserrat/400.css";
@@ -63,23 +62,6 @@ const Header = (props: Props) => {
     }
   };
 
-  const drawer = (
-    <Box onClick={handleDrawerToggle} sx={{ textAlign: "center" }}>
-      {/* variant="h6" sx={{ my: 1 }} */}
-      <Typography sx={style.logoText}>Furnior</Typography>
-      <Divider />
-      <List sx={{ color: "black" }}>
-        {navItems.map((item) => (
-          <ListItem sx={{ color: "black" }} key={item} disablePadding>
-            <ListItemButton sx={{ color: "black", textAlign: "center" }}>
-              <ListItemText sx={{ color: "black" }} primary={item} />
-            </ListItemButton>
-          </ListItem>
-        ))}
-      </List>
-    </Box>
-  );
-
   const container =
     window !== undefined ? () => window().document.body : undefined;
 
@@ -105,7 +87,6 @@ const Header = (props: Props) => {
               justifyContent: { xs: "center", sm: "center" },
             }}
           >
-            {/* component="img" src={logo} alt="logo" sx={style.logo}  */}
             <Box />
             <Box sx={{ display: "flex"}}>
               <img src={logo}
@@ -128,7 +109,6 @@ const Header = (props: Props) => {
           </Box>
 
           <Box
-            // variant="h6"
             component="div"
             sx={{
               width: "20%",
@@ -158,7 +138,7 @@ const Header = (props: Props) => {
           open={mobileOpen}
           onClose={handleDrawerToggle}
           ModalProps={{
-            keepMounted: true, // Better open performance on mobile.
+            keepMounted: true, 
           }}
           sx={{
             display: { xs: "block", sm: "none" },
@@ -182,7 +162,6 @@ const Header = (props: Props) => {
             ))}
           </Box>
 
-          {/* {drawer} */}
         </Drawer>
       </nav>
     </Box>

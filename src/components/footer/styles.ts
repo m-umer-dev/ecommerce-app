@@ -1,4 +1,3 @@
-import { border, borderRadius, display, fontSize, fontWeight, height, lineHeight, width } from '@mui/system';
 
 export const style = {
     mainContainer: {

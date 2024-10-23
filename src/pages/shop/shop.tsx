@@ -1,7 +1,6 @@
-import React, { useEffect, useState } from "react";
-import ItemCard from "../../components/productCard/itemCard";
+import { useEffect, useState } from "react";
 import { useSelector } from "react-redux";
-import {style} from './styles'
+import { style } from "./styles";
 import {
   Box,
   Grid2,
@@ -24,15 +23,15 @@ const Shop = () => {
   const allProducts = useSelector((state: any) => state.product.product);
 
   const [searchItem, setSearchItem] = useState("");
-  const [filteredProducts, setFilteredProducts] = useState(allProducts); 
-  const [isAscending, setIsAscending] = useState(""); 
+  const [filteredProducts, setFilteredProducts] = useState(allProducts);
+  const [isAscending, setIsAscending] = useState("");
   const [visibleProduct, setVisibleProduct] = useState(8);
   const [layout, setLayout] = useState("grid");
   console.log({ layout });
 
   const showMoreProduct = (event: SelectChangeEvent) => {
-    const numberToShow = parseInt(event.target.value, 10); 
-    setVisibleProduct(numberToShow); 
+    const numberToShow = parseInt(event.target.value, 10);
+    setVisibleProduct(numberToShow);
   };
 
   useEffect(() => {
@@ -47,15 +46,15 @@ const Shop = () => {
 
     const sortedProducts = [...filteredProducts].sort((a: any, b: any) => {
       if (order === "Ascending") {
-        return a.name.localeCompare(b.name); 
+        return a.name.localeCompare(b.name);
       } else if (order === "Descending") {
-        return b.name.localeCompare(a.name); 
+        return b.name.localeCompare(a.name);
       }
       return 0;
     });
 
-    setIsAscending(order); 
-    setFilteredProducts(sortedProducts); 
+    setIsAscending(order);
+    setFilteredProducts(sortedProducts);
   };
 
   const handleLayoutChange = (layoutType: string) => {
@@ -79,16 +78,16 @@ const Shop = () => {
         sx={{
           display: "flex",
           justifyContent: "space-evenly",
-          alignItems:"center",
+          alignItems: "center",
           background: "#F9F1E7",
           marginTop: "0px",
-          padding: { xs: "20px", sm: "30px", md: "40px",lg:"30px" }, 
-          flexDirection: { xs: "column", sm: "row" }, 
+          padding: { xs: "20px", sm: "30px", md: "40px", lg: "30px" },
+          flexDirection: { xs: "column", sm: "row" },
         }}
       >
         <TextField
           sx={{
-            width: { xs: "70%", sm: "50%", md: "20%" }, 
+            width: { xs: "70%", sm: "50%", md: "20%" },
           }}
           id="outlined-search"
           placeholder="Search Product"
@@ -104,7 +103,9 @@ const Shop = () => {
             marginTop: { xs: "16px", sm: "0px" },
           }}
         >
-          <InputLabel sx={style.showProduct} id="demo-simple-select-label">Sort By</InputLabel>
+          <InputLabel sx={style.showProduct} id="demo-simple-select-label">
+            Sort By
+          </InputLabel>
           <Select
             labelId="demo-simple-select-label"
             id="demo-simple-select"
@@ -112,61 +113,14 @@ const Shop = () => {
             label="Sort By"
             onChange={handleChange}
           >
-            <MenuItem sx={style.showProduct} value="Ascending">Ascending</MenuItem>
-            <MenuItem sx={style.showProduct} value="Descending">Descending</MenuItem>
+            <MenuItem sx={style.showProduct} value="Ascending">
+              Ascending
+            </MenuItem>
+            <MenuItem sx={style.showProduct} value="Descending">
+              Descending
+            </MenuItem>
           </Select>
         </FormControl>
-
-        <Box
-          sx={{
-            display: "flex",
-            justifyContent: "center",
-            alignItems: "center",
-          }}
-        >
-          <Box
-            onClick={() => handleLayoutChange("grid")}
-            sx={{
-              display: "flex",
-            justifyContent: "center",
-            alignItems: "center",
-
-              cursor: "pointer",
-              margin: { xs: "auto", sm: "16px" },
-              marginTop: { xs: "16px", sm: "0px" },
-            }}
-          >
-            <ViewModuleIcon />
-          </Box>
-
-          <Box
-            onClick={() => handleLayoutChange("list")}
-            sx={{
-              display: "flex",
-            justifyContent: "center",
-            alignItems: "center",
-
-              cursor: "pointer",
-              margin: { xs: "auto", sm: "16px" },
-              marginTop: { xs: "16px", sm: "0px" },
-            }}
-          >
-            <ViewListIcon />
-          </Box>
-
-          <Box
-            onClick={() => handleLayoutChange("two-column")}
-            sx={{
-              cursor: "pointer",
-              margin: { xs: "auto", sm: "16px" },
-              marginTop: { xs: "16px", sm: "0px" },
-            }}
-          >
-            <GridViewIcon />
-          </Box>
-        </Box>
-
-       
 
         <FormControl
           sx={{
@@ -174,7 +128,9 @@ const Shop = () => {
             marginTop: { xs: "16px", sm: "0px" },
           }}
         >
-          <InputLabel sx={style.showProduct} id="demo-simple-select-label">Show : </InputLabel>
+          <InputLabel sx={style.showProduct} id="demo-simple-select-label">
+            Show :{" "}
+          </InputLabel>
           <Select
             labelId="demo-simple-select-label"
             id="demo-simple-select"
@@ -190,7 +146,71 @@ const Shop = () => {
           </Select>
         </FormControl>
 
-        <Box sx={{ marginTop: { xs: "16px", sm: "0px" } }}>
+        <Box
+          sx={{
+            display: "flex",
+            justifyContent: "center",
+            alignItems: "center",
+          }}
+        >
+          <Box
+            onClick={() => handleLayoutChange("grid")}
+            sx={{
+              display: "flex",
+              justifyContent: "center",
+              alignItems: "center",
+              paddingTop:"12px",
+
+              cursor: "pointer",
+              margin: { xs: "auto", sm: "16px" },
+              marginTop: { xs: "16px", sm: "0px" },
+            }}
+          >
+            <ViewModuleIcon />
+          </Box>
+
+          <Box
+            onClick={() => handleLayoutChange("list")}
+            sx={{
+              display: "flex",
+              justifyContent: "center",
+              alignItems: "center",
+              paddingTop:"12px",
+
+
+              cursor: "pointer",
+              margin: { xs: "auto", sm: "16px" },
+              marginTop: { xs: "16px", sm: "0px" },
+            }}
+          >
+            <ViewListIcon />
+          </Box>
+
+          <Box
+            onClick={() => handleLayoutChange("two-column")}
+            sx={{
+              display: "flex",
+              justifyContent: "center",
+              alignItems: "center",
+              paddingTop:"12px",
+
+              cursor: "pointer",
+              margin: { xs: "auto", sm: "16px" },
+              marginTop: { xs: "16px", sm: "0px" },
+            }}
+          >
+            <GridViewIcon />
+          </Box>
+        </Box>
+
+        <Box
+          sx={{
+            marginTop: { xs: "16px", sm: "0px", lg: "0px" },
+            display: "flex",
+            alignItems: "center",
+            justifyContent: "center",
+          }}
+        >
           <Typography sx={style.showProduct}>
             Showing 1 - {visibleProduct} of {allProducts.length}
           </Typography>
@@ -207,15 +227,12 @@ const Shop = () => {
             display: "flex",
             alignItems: "center",
             justifyContent: "center",
-            // background:'red',
-           
           }}
         >
           {filteredProducts.length > 0 ? (
             filteredProducts.slice(0, visibleProduct).map((product: any) => (
               <Grid2
                 key={product.id}
-                
                 size={{
                   xl:
                     layout === "list"

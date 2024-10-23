@@ -10,6 +10,7 @@ export const style = {
         fontWeight: "400",
         lineHeight: '24px',
         textAlign: "left",
+       
 
     }
 }

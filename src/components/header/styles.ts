@@ -43,9 +43,6 @@ export const style = {
         lineHeight: '24px',
         textAlign: "left",
         color: 'black',
-
-
-
     }
 
 

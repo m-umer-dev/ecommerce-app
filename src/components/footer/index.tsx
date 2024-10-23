@@ -7,7 +7,6 @@ import {
   TextField,
   Typography,
 } from "@mui/material";
-import React from "react";
 import { style } from "./styles";
 
 const Footer = () => {
