@@ -5,8 +5,6 @@ import Categories from "../../components/category/categoryShow";
 import { ProductList } from "../../components/productslist/productList";
 import ImageGallery from "../../components/imageGallery/imagesGallery";
 import BannerText from "../../components/banner/bannerText";
-import Shop from "../shop/shop";
-import AboutUs from "../about/aboutUs";
 
 const Home = () => {
   return (
@@ -33,18 +31,8 @@ const Home = () => {
 
        
       </Box>
-       {/* <Box sx={{
-         
-          display:'flex',
-          padding: '20px',
-          alignItems:'center',
-          justifyContent: 'flex-end',
-        }}>
+      
 
-        </Box> */}
-     {/* <BannerText/> */}
-
-     {/* <AboutUs/> */}
       <Categories/>
       <ProductList/>
       <Carousele/>

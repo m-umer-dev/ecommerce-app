@@ -12,7 +12,6 @@ export const style = {
         fontWeight: 600,
         fontSize: '18px',
         lineHeight: '28.8px',
-        //   marginBottom: '4px',
     },
     productFeature: {
         color: '#A0A0A0',

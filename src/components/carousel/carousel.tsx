@@ -1,8 +1,8 @@
-import React, { useEffect, useState } from "react";
+import { useEffect, useState } from "react";
 import image1 from "../../assets/careosel1 .png";
 import image2 from "../../assets/careosel2.png";
 import image3 from "../../assets/careosel3.png";
-import { Box, Button, Grid2, Typography } from "@mui/material";
+import { Box, Grid2, Typography } from "@mui/material";
 import CustomButton from "../customButtons/customButton";
 import { style } from "./styles";
 
@@ -30,12 +30,12 @@ const Carousele = () => {
         padding: "40px",
         margin: "20px",
       }}
-      // size={{ xl: 2, lg: 3, md: 4, sm: 12, xs: 12 }}
     >
       <Box
         sx={{
-          //   background: "white",
-          padding: "30px",
+          display: "flex",
+          flexWrap: "wrap",
+          textAlign:'center',
           maxWidth: "350px",
         }}
       >
@@ -46,23 +46,22 @@ const Carousele = () => {
           Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris tempor
           nulla quis eros convallis, ut vestibulum ex fringilla.
         </Typography>
+        <Box sx={{marginLeft:'10px'}}>
+        <CustomButton  buttonText="Explore More" />
 
-        <Button>
-          <CustomButton buttonText="Explore More" />
-        </Button>
+        </Box>
+
       </Box>
-
       <Box
         sx={{
-          display: "flex",
+          display:{xs:"none",sm:"none",md:"flex",lg:"flex",xl:"flex"},
           justifyContent: "center",
           alignItems: "center",
-          //   background: "red",
           padding: "20px",
           width: "50%",
         }}
       >
-        <Box sx={{ width: "200px", height: "300px" }}>
+        <Box sx={{ width: "250px", height: "300px" }}>
           <img
             alt={`carousel-item-${currentImageIndex + 1}`}
             src={images[currentImageIndex]}
@@ -85,7 +84,7 @@ const Carousele = () => {
         >
           {images.map((img, index) => (
             <Grid2
-              size={{ xl: 2, lg: 3, md: 4, sm: 12, xs: 12 }}
+              size={{ xl: 6, lg: 6, md: 6, sm: 12, xs: 12 }}
               key={index}
               onClick={() => setCurrentImageIndex(index)}
               sx={{
@@ -98,11 +97,11 @@ const Carousele = () => {
                 alt={`thumbnail-${index + 1}`}
                 src={img}
                 style={{
-                  justifyContent: "center",
-                  alignItems: "center",
+                  
+                  
                   padding: "5px",
                   width: "100px",
-                  height: "220px",
+                  height: "150px",
                   objectFit: "cover",
                 }}
               />

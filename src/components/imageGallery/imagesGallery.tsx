@@ -14,13 +14,16 @@ const ImageGallery = () => {
         <Typography sx={style.imageTag}>#FuniroFurniture</Typography>
      
 
-      <Box sx={{ width: '100%', height: 500, overflowY: 'hidden',overflowX: 'hidden' }}>
-      <ImageList variant="woven" cols={8} gap={8}>
+      <Box sx={{ width: "100%",  overflowY: 'hidden',overflowX: 'hidden',
+        flexWrap:"wrap"
+       }}>
+      <ImageList variant="woven"  cols={8} gap={5}   >
         {itemData.map((item) => (
-          <ImageListItem key={item.img}>
+          <ImageListItem key={item.img}   >
             <img
-              srcSet={`${item.img}?w=218&fit=crop&auto=format&dpr=2 2x`}
-              src={`${item.img}?w=248&fit=crop&auto=format`}
+           
+              srcSet={`${item.img}?w=210&fit=crop&auto=format&dpr=2 2x`}
+              src={`${item.img}?w=240&fit=crop&auto=format`}
               alt={item.title}
               loading="lazy"
             />
@@ -94,6 +97,26 @@ const itemData = [
       img: 'https://images.unsplash.com/photo-1519710164239-da123dc03ef4',
       title: 'Coffee table',
       author: 'Hutomo Abrianto',
+    },
+    {
+      img: 'https://images.unsplash.com/photo-1549388604-817d15aa0110',
+      title: 'Bed',
+      author: 'swabdesign',
+    },
+    {
+      img: 'https://images.unsplash.com/photo-1525097487452-6278ff080c31',
+      title: 'Books',
+      author: 'Pavel Nekoranec',
+    },
+    {
+      img: 'https://images.unsplash.com/photo-1523413651479-597eb2da0ad6',
+      title: 'Sink',
+      author: 'Charles Deluvio',
+    },
+    {
+      img: 'https://images.unsplash.com/photo-1563298723-dcfebaa392e3',
+      title: 'Kitchen',
+      author: 'Christian Mackie',
     },
   ];
 

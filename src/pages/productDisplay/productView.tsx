@@ -1,5 +1,4 @@
 import React from "react";
-import { style } from "./styles";
 import { useSelector } from "react-redux";
 import { useParams } from "react-router-dom";
 import { Box, Card, CardContent, Typography } from "@mui/material";

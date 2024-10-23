@@ -1,3 +1,4 @@
+import { Label } from '@mui/icons-material';
 import { display, padding, textAlign } from '@mui/system';
 export const style = {
 
@@ -62,4 +63,23 @@ export const style = {
         textAlign: 'left',
         marginLeft: '30px',
     },
+    optionTitle:{
+
+        fontFamily: "Poppins",
+        fontSize: "16px",
+        fontWeight: "400",
+        lineHeight: '24px',
+        textAlign: 'left',
+    
+    },
+    optionDescription:{
+
+        fontFamily: "Poppins",
+        fontSize: "16px",
+        fontWeight: "300",
+        lineHeight: '24px',
+        textAlign: 'justified',
+
+
+    }
 }

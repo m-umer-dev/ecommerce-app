@@ -5,13 +5,14 @@ export const style = {
         alignContent: "center",
         alignItems: "center",
         marginTop: '50px',
-        marginBottom: '50px',
+        marginBottom: '10px',
         // background: 'red',
+        flexWrap:"wrap",
 
     },
     smallTitle: {
         fontFamily: "Poppins",
-        fontSize: "20px",
+        fontSize: "15px",
         fontWeight: "600",
         lineHeight: "30px",
         textAlign: "center",
@@ -20,9 +21,9 @@ export const style = {
 
     imageTag: {
         fontFamily: "Poppins",
-        fontSize: "40px",
+        fontSize: "30px",
         fontWeight: "700",
-        lineHeight: "48px",
+        lineHeight: "40px",
         textAlign: "center",
 
     }

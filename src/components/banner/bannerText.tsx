@@ -26,15 +26,17 @@ import {style} from './styles';
         </Typography>
       </CardContent>
       <CardActions>
-        <Button sx={style.buyButton}><CustomButton buttonText='Buy Now'/></Button>
+        {/* <Button sx={style.buyButton}> */}
+          <CustomButton buttonText='Buy Now'/>
         
       </CardActions>
     </React.Fragment>
   );
 const BannerText = () => {
   return (
-    <Box sx={{ maxWidth: 643 }}>
-    <Card variant="outlined" sx={{ background:'#FFF3E3', padding: "10px" }}>{card}</Card>
+    <Box sx={{ maxWidth: 643,display:{sm:12,xs:12},flexWrap:"wrap",padding:{xs:"0px",sm:"0px",lg:"0px"},justifyContent:{xs:"center"},
+     }}>
+    <Card  sx={{ background:'#FFF3E3',display:{sm:12,xs:12},flexWrap:"wrap",padding:{xs:"0px",sm:"0px",lg:"20px"},justifyContent:{xs:"center"}}}>{card}</Card>
   </Box>
   )
 }

@@ -1,7 +1,6 @@
 import {
   Box,
   Button,
-  Card,
   Grid2,
   Stack,
   TextField,
@@ -18,6 +17,7 @@ import { useForm } from "react-hook-form";
 import CustomButton from "../../components/customButtons/customButton";
 import { getUserData } from "../../redux/slices/usersSlice";
 import Badges from "../../components/badges/badges";
+import { toast, ToastContainer } from "react-toastify";
 
 interface ContactFormValues {
   id: number;
@@ -37,6 +37,8 @@ const Contact = () => {
   //   const navigate = useNavigate();
 
   const onSubmit = (data: ContactFormValues) => {
+   
+
     dispatch(
       getUserData([
         ...allContact,
@@ -49,9 +51,16 @@ const Contact = () => {
         },
       ])
     );
+    // console.log(data);
+    toast.success("Submitted", {
+      position: "top-right",
+       className: 'foo-bar'
+    });
   };
   return (
     <>
+      <ToastContainer />
+
       <Box
         sx={{
           backgroundImage: `url(${contactImage})`,
@@ -64,26 +73,25 @@ const Contact = () => {
       ></Box>
 
       <Box sx={style.mainBox}>
-          <Grid2 size={{ xl: 6 , lg: 6, md: 6, sm: 12, xs: 12 }}>
-            <Typography sx={style.title}>Get In Touch With Us</Typography>
-            <Typography variant="subtitle2" gutterBottom sx={style.subTitle}>
-              For More Information About Our Product & Services. Please Feel
-              Free To Drop Us An Email. Our Staff Always Be There To Help You
-              Out. Do Not Hesitate!
-            </Typography>
-          </Grid2>
+        <Grid2 size={{ xl: 6, lg: 6, md: 6, sm: 12, xs: 12 }}>
+          <Typography sx={style.title}>Get In Touch With Us</Typography>
+          <Typography variant="subtitle2" gutterBottom sx={style.subTitle}>
+            For More Information About Our Product & Services. Please Feel Free
+            To Drop Us An Email. Our Staff Always Be There To Help You Out. Do
+            Not Hesitate!
+          </Typography>
+        </Grid2>
 
         <Box
           sx={{
             background: "white",
             display: "flex",
-            flexWrap:'wrap',
+            flexWrap: "wrap",
             justifyContent: "space-evenly",
           }}
         >
           <Box maxWidth={350} sx={{ padding: "50px" }}>
-            <Grid2
-            >
+            <Grid2>
               <Stack>
                 <LocationOnIcon sx={style.icons} />
                 <Typography sx={style.shopDetailTitle}>Address</Typography>
@@ -93,8 +101,7 @@ const Contact = () => {
               </Stack>
             </Grid2>
 
-            <Grid2
-            >
+            <Grid2>
               <Stack>
                 <PhoneIcon sx={style.icons} />
                 <Typography sx={style.shopDetailTitle}>Phone</Typography>
@@ -116,7 +123,7 @@ const Contact = () => {
           </Box>
 
           <Box>
-            <Grid2
+            <Box
               sx={{
                 maxWidth: 550,
                 background: "white",
@@ -132,10 +139,11 @@ const Contact = () => {
                 type="text"
                 fullWidth
                 {...register("name", { required: "Enter Your Name" })}
-                sx={{
-                  marginTop: "20px",
-                  color: "white",
-                }}
+                sx={style.inputLabelTitle}
+                // sx={{
+                //   marginTop: "20px",
+                //   color: "white",
+                // }}
               />
               {errors.name && (
                 <span style={{ color: "red" }}>{errors.name.message}</span>
@@ -148,10 +156,11 @@ const Contact = () => {
                 type="email"
                 fullWidth
                 {...register("email", { required: "email" })}
-                sx={{
-                  marginTop: "20px",
-                  color: "white",
-                }}
+                // sx={{
+                //   marginTop: "20px",
+                //   color: "white",
+                // }}
+                sx={style.inputLabelTitle}
               />
               {errors.email && (
                 <span style={{ color: "red" }}>{errors.email.message}</span>
@@ -164,10 +173,11 @@ const Contact = () => {
                 type="text"
                 fullWidth
                 {...register("subject", { required: "Enter Subject" })}
-                sx={{
-                  marginTop: "20px",
-                  color: "white",
-                }}
+                // sx={{
+                //   marginTop: "20px",
+                //   color: "white",
+                // }}
+                sx={style.inputLabelTitle}
               />
               {errors.subject && (
                 <span style={{ color: "red" }}>{errors.subject.message}</span>
@@ -181,19 +191,17 @@ const Contact = () => {
                 multiline
                 type="text"
                 {...register("message", { required: "message" })}
-                sx={{
-                  marginTop: "20px",
-                  color: "white",
-                }}
+                // sx={{
+                //   marginTop: "20px",
+                //   color: "white",
+                // }}
+                sx={style.inputLabelTitle}
                 rows={3}
               />
               {errors.message && (
                 <span style={{ color: "red" }}>{errors.message.message}</span>
               )}
-
-             
-            </Grid2>
-            <Button
+              <Button
                 type="submit"
                 sx={{
                   marginTop: "20px",
@@ -201,6 +209,7 @@ const Contact = () => {
               >
                 <CustomButton buttonText="Submit" />
               </Button>
+            </Box>
           </Box>
         </Box>
       </Box>

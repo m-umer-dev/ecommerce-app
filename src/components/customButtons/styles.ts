@@ -9,6 +9,8 @@ export const style = {
         gap: '0px',
         opacity: '0px',
         color: '#B88E2F',
+        fontFamily: 'Poppins',
+
 
     },
     exploreMore: {

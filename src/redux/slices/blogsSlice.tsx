@@ -3,10 +3,21 @@ import image1 from "../../assets/blogImage.png";
 import image2 from '../../assets/image2.png'
 import image3 from '../../assets/image3.png'
 
-export interface blogState {
-  allBlogs: any;
-}
+export interface blogValues {
+  // allBlogs: any;
+  id: number;
+  image: string;
 
+    admin: string;
+    postDate: string;
+    tag: string;
+    title: string;
+    discription: string;
+
+}
+export interface blogState {
+  allBlogs: blogValues[];
+}
 const initialState: blogState = {
   allBlogs: [
     {
@@ -45,7 +56,7 @@ export const blogSlice = createSlice({
   name: "blogs",
   initialState,
   reducers: {
-    setProducts: (state, action: PayloadAction<any>) => {
+    setProducts: (state, action: PayloadAction<blogValues[]>) => {
       state.allBlogs = action.payload;
     },
   },

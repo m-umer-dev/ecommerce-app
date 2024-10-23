@@ -12,7 +12,7 @@ export const style = {
 
         color: '#B88E2F',
         fontFamily: ' Poppins',
-        fontSize: '52px',
+        fontSize: '48px',
         fontWeight: '700',
         lineHeight: '65px',
         textAlign: 'left',
