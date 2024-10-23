@@ -22,29 +22,29 @@ interface ExpandMoreProps extends IconButtonProps {
   expand: boolean;
 }
 
-const ExpandMore = styled((props: ExpandMoreProps) => {
-  const { expand, ...other } = props;
-  return <IconButton {...other} />;
-})(({ theme }) => ({
-  marginLeft: 'auto',
-  transition: theme.transitions.create('transform', {
-    duration: theme.transitions.duration.shortest,
-  }),
-  variants: [
-    {
-      props: ({ expand }) => !expand,
-      style: {
-        transform: 'rotate(0deg)',
-      },
-    },
-    {
-      props: ({ expand }) => !!expand,
-      style: {
-        transform: 'rotate(180deg)',
-      },
-    },
-  ],
-}));
+// const ExpandMore = styled((props: ExpandMoreProps) => {
+//   const { expand, ...other } = props;
+//   return <IconButton {...other} />;
+// })(({ theme }) => ({
+//   marginLeft: 'auto',
+//   transition: theme.transitions.create('transform', {
+//     duration: theme.transitions.duration.shortest,
+//   }),
+//   variants: [
+//     {
+//       props: ({ expand }) => !expand,
+//       style: {
+//         transform: 'rotate(0deg)',
+//       },
+//     },
+//     {
+//       props: ({ expand }) => !!expand,
+//       style: {
+//         transform: 'rotate(180deg)',
+//       },
+//     },
+//   ],
+// }));
 
 export default function AboutUs() {
   const [expanded, setExpanded] = React.useState(false);
@@ -55,8 +55,8 @@ export default function AboutUs() {
 
   return (
     <>
-    <Box sx={{marginTop:'70px',display:'flex',justifyContent:"center",alignItems:'center',background:'red'}}>
-    <Card sx={{ maxWidth: 945 }}>
+    <Box sx={{marginTop:'70px',display:'flex',justifyContent:"center",alignItems:'center'}}>
+    <Card elevation={0} sx={{ maxWidth: 945 ,borderRadious:"0px",}}>
       <CardHeader
        
        

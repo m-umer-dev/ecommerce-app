@@ -30,16 +30,16 @@ const Footer = () => {
       <Grid2 container spacing={0.5} sx={style.column2}>
         <Typography sx={style.linkTitle}>Links</Typography>
 
-        <Link sx={style.linkList} href="#">
+        <Link sx={style.linkList} href="/home">
           Home
         </Link>
-        <Link sx={style.linkList} href="#">
+        <Link sx={style.linkList} href="/shop">
           Shop
         </Link>
-        <Link sx={style.linkList} href="#">
+        <Link sx={style.linkList} href="/aboutUs">
           About
         </Link>
-        <Link sx={style.linkList} href="#">
+        <Link sx={style.linkList} href="/contact">
           Contact
         </Link>
       </Grid2>
@@ -47,7 +47,7 @@ const Footer = () => {
       <Grid2 container spacing={0.5} sx={style.column2}>
         <Typography sx={style.linkTitle}>Links</Typography>
 
-        <Link sx={style.linkList} href="#">
+        <Link sx={style.linkList} href="/checkOut">
         Payment
         </Link>
         <Link sx={style.linkList} href="#">

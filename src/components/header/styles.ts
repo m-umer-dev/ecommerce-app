@@ -17,7 +17,7 @@ export const style = {
         , mr: 1
     },
     logo: {
-        width: '50px',
+        width: '30px',
         height: 'auto',
     },
     logoText:
@@ -25,7 +25,10 @@ export const style = {
         mr: 1,
         display: { xs: 'none', md: 'flex' },
         fontFamily: 'Montserrat',
-        fontWeight: 700,
+        fontSize: '20px',
+
+        fontWeight: "700",
+
         letterSpacing: '.1rem',
         lineheight: '41.45px',
         color: 'black',

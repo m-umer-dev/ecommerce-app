@@ -7,11 +7,9 @@ import {
   InputLabel,
   MenuItem,
   Select,
-  Stack,
   TextField,
   Typography,
 } from "@mui/material";
-import React from "react";
 import contactImage from "../../assets/contactBanner.jpg";
 import { style } from "./styles";
 import { Controller, useForm } from "react-hook-form";

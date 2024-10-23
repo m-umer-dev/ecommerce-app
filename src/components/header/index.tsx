@@ -28,14 +28,13 @@ import ShoppingCartIcon from "@mui/icons-material/ShoppingCart";
 import { Link, useNavigate } from "react-router-dom";
 import { Navigation } from "@mui/icons-material";
 
-import '@fontsource/montserrat/300.css';
-import '@fontsource/montserrat/400.css';
-import '@fontsource/montserrat/500.css';
-import '@fontsource/montserrat/700.css';
+import "@fontsource/montserrat/300.css";
+import "@fontsource/montserrat/400.css";
+import "@fontsource/montserrat/500.css";
+import "@fontsource/montserrat/700.css";
 interface Props {
-  
-  navigate?:string;
-  navItems?:any;
+  navigate?: string;
+  navItems?: any;
   window?: () => Window;
 }
 
@@ -52,8 +51,7 @@ const Header = (props: Props) => {
 
   const navigate = useNavigate();
 
-  const goTo = (item:string) => {
-  
+  const goTo = (item: string) => {
     if (item === "Shop") {
       navigate("/shop");
     } else if (item === "Home") {
@@ -63,23 +61,18 @@ const Header = (props: Props) => {
     } else if (item === "Contact") {
       navigate("/contact");
     }
-      
-    
-    
   };
 
   const drawer = (
     <Box onClick={handleDrawerToggle} sx={{ textAlign: "center" }}>
       {/* variant="h6" sx={{ my: 1 }} */}
-      <Typography  sx={style.logoText}>
-        Furnior
-      </Typography>
+      <Typography sx={style.logoText}>Furnior</Typography>
       <Divider />
-      <List sx={{color: 'black'}}>
+      <List sx={{ color: "black" }}>
         {navItems.map((item) => (
-          <ListItem sx={{color: 'black'}} key={item} disablePadding>
-            <ListItemButton sx={{color: 'black', textAlign: "center" }}>
-              <ListItemText  sx={{color: 'black'}} primary={item} />
+          <ListItem sx={{ color: "black" }} key={item} disablePadding>
+            <ListItemButton sx={{ color: "black", textAlign: "center" }}>
+              <ListItemText sx={{ color: "black" }} primary={item} />
             </ListItemButton>
           </ListItem>
         ))}
@@ -89,10 +82,11 @@ const Header = (props: Props) => {
 
   const container =
     window !== undefined ? () => window().document.body : undefined;
+
   return (
-    <Box sx={{ display: "flex", background:'red'}}>
+    <Box sx={{ display: "flex", background: "red" }}>
       <CssBaseline />
-      <AppBar component="nav" sx={{ background:'white', color: 'black'}}>
+      <AppBar component="nav" sx={{ background: "white", color: "black" }}>
         <Toolbar>
           <IconButton
             color="inherit"
@@ -103,16 +97,31 @@ const Header = (props: Props) => {
           >
             <MenuIcon />
           </IconButton>
-          <Box sx={{display:'flex',flexGrow: 1, margin: "10px" }}>
-            <Box component="img" src={logo} alt="logo" sx={style.logo} />
-            <Typography  sx={style.logoText}>Furniro</Typography>
-            {/* sx={{padding:'5px'}} */}
+          <Box
+            sx={{
+              display: "flex",
+              flexGrow: 1,
+              margin: "10px",
+              justifyContent: { xs: "center", sm: "center" },
+            }}
+          >
+            {/* component="img" src={logo} alt="logo" sx={style.logo}  */}
+            <Box />
+            <Box sx={{ display: "flex"}}>
+              <img src={logo}
+              style={{width:"40px",height:"35px"}} />
+              <Typography sx={style.logoText}>Furniro</Typography>
+            </Box>
           </Box>
-         
 
-          <Box sx={{ flexGrow: 1, display: { xs: "none", sm: "block" ,lg:"flex"} }}>
+          <Box
+            sx={{
+              flexGrow: 1,
+              display: { xs: "none", sm: "block", lg: "flex" },
+            }}
+          >
             {navItems.map((item) => (
-              <Button sx={style.navText}  key={item}    onClick={()=>goTo(item)}>
+              <Button sx={style.navText} key={item} onClick={() => goTo(item)}>
                 {item}
               </Button>
             ))}
@@ -124,7 +133,7 @@ const Header = (props: Props) => {
             sx={{
               width: "20%",
               padding: "5px",
-              display: { lg: 'flex',xs: "none", sm: "none" },
+              display: { lg: "flex", xs: "none", sm: "none" },
             }}
           >
             <IconButton aria-label="user" component={Link} to="/shop">
@@ -159,7 +168,21 @@ const Header = (props: Props) => {
             },
           }}
         >
-          {drawer}
+          <Box
+            sx={{
+              display: { xs: "flex" },
+              flexDirection: { xs: "column" },
+              marginTop: { xs: "20px" },
+            }}
+          >
+            {navItems.map((item) => (
+              <Button sx={style.navText} key={item} onClick={() => goTo(item)}>
+                {item}
+              </Button>
+            ))}
+          </Box>
+
+          {/* {drawer} */}
         </Drawer>
       </nav>
     </Box>

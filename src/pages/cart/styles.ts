@@ -1,4 +1,3 @@
-import { maxWidth } from './../../../node_modules/@mui/system/sizing/sizing.d';
 export const style = {
     mainBox: {
         display: 'flex',
@@ -42,8 +41,6 @@ export const style = {
     boxSubTotal: {
         display: "flex",
         justifyContent: "space-between",
-
-
 
     },
     cartSubTotal: {
@@ -97,8 +94,6 @@ export const style = {
     },
     priceContent: {
         display: 'flex',
-        // flexGrow: 1,
-        // background: 'red',
         width: '100%',
         alignItems: 'center',
         flexDirection: 'flex-start',
@@ -142,10 +137,12 @@ export const style = {
         textAlign: 'left',
     },
     chekOutbutton:{
+        fontFamily: 'Poppins',
         background: 'none',
         color: 'black',
         borderColor: "black",
-        marginTop: '8px',
+        marginTop: '10px',
+        marginBottom:'10px',
         
     }
 
