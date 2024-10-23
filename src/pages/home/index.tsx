@@ -6,6 +6,7 @@ import { ProductList } from "../../components/productslist/productList";
 import ImageGallery from "../../components/imageGallery/imagesGallery";
 import BannerText from "../../components/banner/bannerText";
 import Shop from "../shop/shop";
+import AboutUs from "../about/aboutUs";
 
 const Home = () => {
   return (
@@ -43,7 +44,7 @@ const Home = () => {
         </Box> */}
      {/* <BannerText/> */}
 
-     
+     {/* <AboutUs/> */}
       <Categories/>
       <ProductList/>
       <Carousele/>

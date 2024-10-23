@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from "react";
 import ItemCard from "../../components/productCard/itemCard";
 import { useSelector } from "react-redux";
+import {style} from './styles'
 import {
   Box,
   Grid2,
@@ -77,16 +78,17 @@ const Shop = () => {
       <Box
         sx={{
           display: "flex",
-          justifyContent: "space-between",
+          justifyContent: "space-evenly",
+          alignItems:"center",
           background: "#F9F1E7",
           marginTop: "0px",
-          padding: { xs: "20px", sm: "30px", md: "40px" }, // Adjust padding for different screen sizes
-          flexDirection: { xs: "column", sm: "row" }, // Stack on small screens, row layout on medium and above
+          padding: { xs: "20px", sm: "30px", md: "40px",lg:"30px" }, 
+          flexDirection: { xs: "column", sm: "row" }, 
         }}
       >
         <TextField
           sx={{
-            width: { xs: "100%", sm: "50%", md: "20%" }, 
+            width: { xs: "70%", sm: "50%", md: "20%" }, 
           }}
           id="outlined-search"
           placeholder="Search Product"
@@ -98,11 +100,11 @@ const Shop = () => {
 
         <FormControl
           sx={{
-            width: { xs: "100%", sm: "50%", md: "15%" },
+            width: { xs: "70%", sm: "50%", md: "15%" },
             marginTop: { xs: "16px", sm: "0px" },
           }}
         >
-          <InputLabel id="demo-simple-select-label">Sort By</InputLabel>
+          <InputLabel sx={style.showProduct} id="demo-simple-select-label">Sort By</InputLabel>
           <Select
             labelId="demo-simple-select-label"
             id="demo-simple-select"
@@ -110,8 +112,8 @@ const Shop = () => {
             label="Sort By"
             onChange={handleChange}
           >
-            <MenuItem value="Ascending">Ascending</MenuItem>
-            <MenuItem value="Descending">Descending</MenuItem>
+            <MenuItem sx={style.showProduct} value="Ascending">Ascending</MenuItem>
+            <MenuItem sx={style.showProduct} value="Descending">Descending</MenuItem>
           </Select>
         </FormControl>
 
@@ -125,8 +127,12 @@ const Shop = () => {
           <Box
             onClick={() => handleLayoutChange("grid")}
             sx={{
+              display: "flex",
+            justifyContent: "center",
+            alignItems: "center",
+
               cursor: "pointer",
-              marginLeft: { xs: "auto", sm: "16px" },
+              margin: { xs: "auto", sm: "16px" },
               marginTop: { xs: "16px", sm: "0px" },
             }}
           >
@@ -136,8 +142,12 @@ const Shop = () => {
           <Box
             onClick={() => handleLayoutChange("list")}
             sx={{
+              display: "flex",
+            justifyContent: "center",
+            alignItems: "center",
+
               cursor: "pointer",
-              marginLeft: { xs: "auto", sm: "16px" },
+              margin: { xs: "auto", sm: "16px" },
               marginTop: { xs: "16px", sm: "0px" },
             }}
           >
@@ -148,7 +158,7 @@ const Shop = () => {
             onClick={() => handleLayoutChange("two-column")}
             sx={{
               cursor: "pointer",
-              marginLeft: { xs: "auto", sm: "16px" },
+              margin: { xs: "auto", sm: "16px" },
               marginTop: { xs: "16px", sm: "0px" },
             }}
           >
@@ -156,19 +166,15 @@ const Shop = () => {
           </Box>
         </Box>
 
-        <Box sx={{ marginTop: { xs: "16px", sm: "0px" } }}>
-          <Typography>
-            Showing 1 - {visibleProduct} of {allProducts.length}
-          </Typography>
-        </Box>
+       
 
         <FormControl
           sx={{
-            width: { xs: "100%", sm: "25%", md: "10%" },
+            width: { xs: "70%", sm: "50%", md: "15%" },
             marginTop: { xs: "16px", sm: "0px" },
           }}
         >
-          <InputLabel id="demo-simple-select-label">Show : </InputLabel>
+          <InputLabel sx={style.showProduct} id="demo-simple-select-label">Show : </InputLabel>
           <Select
             labelId="demo-simple-select-label"
             id="demo-simple-select"
@@ -183,6 +189,12 @@ const Shop = () => {
             <MenuItem value={20}>20</MenuItem>
           </Select>
         </FormControl>
+
+        <Box sx={{ marginTop: { xs: "16px", sm: "0px" } }}>
+          <Typography sx={style.showProduct}>
+            Showing 1 - {visibleProduct} of {allProducts.length}
+          </Typography>
+        </Box>
       </Box>
 
       <Box sx={{ marginTop: "50px", padding: "40px" }}>

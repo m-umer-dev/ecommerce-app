@@ -18,6 +18,12 @@ import '@fontsource/poppins/400.css';
 import '@fontsource/poppins/500.css';
 import '@fontsource/poppins/700.css';
 
+import '@fontsource/montserrat/300.css';
+import '@fontsource/montserrat/400.css';
+import '@fontsource/montserrat/500.css';
+import '@fontsource/montserrat/700.css';
+import AboutUs from "./pages/about/aboutUs";
+
 
 const Layout = () => (
   <>
@@ -57,6 +63,10 @@ function App() {
           path: "/contact",
           element: <Contact/>,
 
+        },
+        {
+          path: "/aboutUs",
+          element: <AboutUs/>
         },
         {
           path: "/checkOut",

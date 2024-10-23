@@ -10,6 +10,7 @@ import {
   CssBaseline,
   Divider,
   Drawer,
+  Grid2,
   IconButton,
   List,
   ListItem,
@@ -26,11 +27,13 @@ import FavoriteIcon from "@mui/icons-material/Favorite";
 import ShoppingCartIcon from "@mui/icons-material/ShoppingCart";
 import { Link, useNavigate } from "react-router-dom";
 import { Navigation } from "@mui/icons-material";
+
+import '@fontsource/montserrat/300.css';
+import '@fontsource/montserrat/400.css';
+import '@fontsource/montserrat/500.css';
+import '@fontsource/montserrat/700.css';
 interface Props {
-  /**
-   * Injected by the documentation to work in an iframe.
-   * You won't need it on your project.
-   */
+  
   navigate?:string;
   navItems?:any;
   window?: () => Window;
@@ -56,7 +59,7 @@ const Header = (props: Props) => {
     } else if (item === "Home") {
       navigate("/");
     } else if (item === "About") {
-      navigate("/blogs");
+      navigate("/aboutUs");
     } else if (item === "Contact") {
       navigate("/contact");
     }
@@ -67,7 +70,8 @@ const Header = (props: Props) => {
 
   const drawer = (
     <Box onClick={handleDrawerToggle} sx={{ textAlign: "center" }}>
-      <Typography variant="h6" sx={{ my: 1 }}>
+      {/* variant="h6" sx={{ my: 1 }} */}
+      <Typography  sx={style.logoText}>
         Furnior
       </Typography>
       <Divider />
@@ -101,13 +105,14 @@ const Header = (props: Props) => {
           </IconButton>
           <Box sx={{display:'flex',flexGrow: 1, margin: "10px" }}>
             <Box component="img" src={logo} alt="logo" sx={style.logo} />
-            <Typography sx={{padding:'5px'}}>Furniro</Typography>
+            <Typography  sx={style.logoText}>Furniro</Typography>
+            {/* sx={{padding:'5px'}} */}
           </Box>
          
 
-          <Box sx={{ flexGrow: 1, display: { xs: "none", sm: "block" } }}>
+          <Box sx={{ flexGrow: 1, display: { xs: "none", sm: "block" ,lg:"flex"} }}>
             {navItems.map((item) => (
-              <Button  key={item} sx={{ color: "black" }}  onClick={()=>goTo(item)}>
+              <Button sx={style.navText}  key={item}    onClick={()=>goTo(item)}>
                 {item}
               </Button>
             ))}

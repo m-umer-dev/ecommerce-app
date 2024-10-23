@@ -3,11 +3,11 @@ export const style = {
     appbar: {
         backgroundColor: 'white',
         position: 'static',
-       
+
     },
     container: {
         maxWidth: "xl",
-       
+
     },
     AdbIcon: {
         display: {
@@ -30,10 +30,22 @@ export const style = {
         lineheight: '41.45px',
         color: 'black',
         textDecoration: 'none',
+        padding: '5px',
 
     },
+    navText: {
+        fontFamily: "Poppins",
+        fontSize: '16px',
+        fontWeight: '500',
+        lineHeight: '24px',
+        textAlign: "left",
+        color: 'black',
 
-   
+
+
+    }
+
+
 
 
 }
