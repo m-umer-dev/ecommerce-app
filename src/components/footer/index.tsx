@@ -21,7 +21,9 @@ const Footer = () => {
       size={{ xl: 3, lg: 3, md: 3, sm: 12, xs: 12 }}
     >
       <Grid2 sx={style.column1}>
-        <Typography style={style.logo}>Funiro.</Typography>
+        <Typography 
+       
+        sx={style.logo}>Funiro.</Typography>
         <Typography variant="body1" gutterBottom style={style.address}>
           400 University Drive Suite 200 Coral Gables, FL 33134 USA
         </Typography>
