@@ -1,17 +1,26 @@
 
-export const style = {
-   
+export const styles = {
+    productContent: {
+        display: 'flex',
+        jusfityContent: "center",
+        width: "80%"
+    },
+
     productDetail: {
         display: 'flex',
-        flexDirection: 'column',
-        alignItems: 'flex-start',
+        alignItems: "center",
+        justifyContent: "space-around",
+        padding: '5px',
+        width: "50%"
     },
+
     productTitle: {
         color: 'black',
         fontFamily: 'Poppins',
         fontWeight: 600,
         fontSize: '18px',
         lineHeight: '22.8px',
+        alignItems: "center",
     },
     productFeature: {
         color: '#A0A0A0',
@@ -20,30 +29,30 @@ export const style = {
         fontSize: '14px',
         marginTop: '5px',
         lineHeight: '15px',
+        alignItems: "center",
+
 
     },
-    priceContent: {
+    priceDetail: {
         display: 'flex',
-        width: '100%',
-        alignItems: 'center',
-        flexDirection: 'flex-start',
-        justifyContent: "space-between",
-
+        alignItems: "center",
+        justifyContent: "space-around",
+        padding: '5px',
+        width: "50%"
     },
 
     productPrice: {
         fontFamily: 'Poppins',
         fontWeight: 600,
         fontSize: '18px',
-        lineHeight: '20px',
         color: 'black',
+        alignItems: "center",
 
     },
     productOldPrice: {
         fontFamily: 'Poppins',
         fontWeight: 600,
         fontSize: '16px',
-        lineHeight: '24px',
         textDecoration: 'line-through',
         color: '#B0B0B0',
     },
@@ -62,11 +71,6 @@ export const style = {
         fontWeight: '600',
         lineHeight: '24px',
         textAlign: 'left',
-    },
-    productText: {
-        display: 'flex',
-        jusfityContent: "center",
-        
     },
 
 }

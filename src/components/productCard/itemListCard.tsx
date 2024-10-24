@@ -1,26 +1,25 @@
-import * as React from "react";
 import Card from "@mui/material/Card";
 import CardContent from "@mui/material/CardContent";
 import CardMedia from "@mui/material/CardMedia";
 import Typography from "@mui/material/Typography";
 import { style } from "../productCard/styles";
-import { Box, Button, Grid2, Stack, useMediaQuery } from "@mui/material";
+import { Box, Button, Grid2, Stack} from "@mui/material";
 import shareicon from "../../assets/shareicon.png";
 import compareicon from "../../assets/compareicon.png";
 import hearticon from "../../assets/hearticon.png";
 import { useDispatch } from "react-redux";
 import { addToCart } from "../../redux/slices/cartSlice";
 
-import { ToastContainer, toast } from 'react-toastify';
-  import 'react-toastify/dist/ReactToastify.css';
+import { ToastContainer, toast } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
 
 interface ProductCardValues {
   productId: number;
   productImage?: string;
   productTitle: string;
   productFeature: string;
-  productPrice: string; // Keep as string for input purposes
-  productOldPrice: string; // Keep as string for input purposes
+  productPrice: string;
+  productOldPrice: string;
 }
 
 const ItemListCard = ({
@@ -32,38 +31,32 @@ const ItemListCard = ({
   productOldPrice,
 }: ProductCardValues) => {
   const dispatch = useDispatch();
- const {} = useMediaQuery("md")
-//  const matches = useMediaQuery('(max-width:285px)');
+
   const handleAddToCart = () => {
     const newProduct = {
       id: productId,
       name: productTitle,
       description: productFeature,
-      price: parseFloat(productPrice), // Convert to a number if it's a string
-      discountPrice: parseFloat(productOldPrice), // Convert to a number if it's a string
+      price: parseFloat(productPrice),
+      discountPrice: parseFloat(productOldPrice),
       image: productImage || "",
-      discount: "New", // Static value
+      discount: "New",
       quantity: 1,
     };
 
     console.log("Dispatching add to cart", newProduct);
     dispatch(addToCart(newProduct));
-    
+
     toast.success("Added !", {
-        position: "top-right",
-         className: 'foo-bar'
-      });
-  
-   
+      position: "top-right",
+      className: "foo-bar",
+    });
   };
 
   return (
     <Card
-    
-    
-    
       sx={{
-        width: "260px",
+        width: "305px",
         height: "380px",
         background: "#F4F5F7",
         transition: "transform 0.3s, box-shadow 0.3s",
@@ -74,18 +67,16 @@ const ItemListCard = ({
         },
         "&:hover .centerButton": {
           opacity: 1,
-        },        
+        },
       }}
-
     >
       <CardMedia
         component="img"
         alt={productTitle}
         height="240px"
-        width="100%"
         image={productImage}
       />
-        <ToastContainer />
+      <ToastContainer />
 
       <Box sx={style.productDetail}>
         <CardContent>
@@ -94,8 +85,10 @@ const ItemListCard = ({
         </CardContent>
 
         <CardContent sx={style.priceContent}>
-          <Typography sx={style.productPrice}>Rs {productPrice}</Typography> {/* Display prices correctly */}
-          <Typography sx={style.productOldPrice}>Rs {productOldPrice}</Typography>
+          <Typography sx={style.productPrice}>Rs {productPrice}</Typography>
+          <Typography sx={style.productOldPrice}>
+            Rs {productOldPrice}
+          </Typography>
         </CardContent>
       </Box>
 
@@ -151,7 +144,7 @@ const ItemListCard = ({
                 justifyContent: "center",
               }}
             >
-              <Stack sx={{ marginRight: "0px"  }}>
+              <Stack sx={{ marginRight: "0px" }}>
                 <img src={shareicon} alt="Share" />
               </Stack>
               <Typography sx={style.iconText}>Share</Typography>

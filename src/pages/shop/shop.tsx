@@ -18,6 +18,8 @@ import ViewModuleIcon from "@mui/icons-material/ViewModule";
 import ViewListIcon from "@mui/icons-material/ViewList";
 import GridViewIcon from "@mui/icons-material/GridView";
 import ItemListCard from "../../components/productCard/itemListCard";
+import ItemCard from "../../components/productCard/itemCard";
+import TwoColumnCard from "../../components/productCard/twoColumnCard";
 
 const Shop = () => {
   const allProducts = useSelector((state: any) => state.product.product);
@@ -148,7 +150,13 @@ const Shop = () => {
 
         <Box
           sx={{
-            display: "flex",
+            display: {
+              xs: "none",
+              sm: "none",
+              md: "flex",
+              lg: "flex",
+              xl: "flex",
+            },
             justifyContent: "center",
             alignItems: "center",
           }}
@@ -159,7 +167,7 @@ const Shop = () => {
               display: "flex",
               justifyContent: "center",
               alignItems: "center",
-              paddingTop:"12px",
+              paddingTop: "12px",
 
               cursor: "pointer",
               margin: { xs: "auto", sm: "16px" },
@@ -175,9 +183,7 @@ const Shop = () => {
               display: "flex",
               justifyContent: "center",
               alignItems: "center",
-              paddingTop:"12px",
-
-
+              paddingTop: "12px",
               cursor: "pointer",
               margin: { xs: "auto", sm: "16px" },
               marginTop: { xs: "16px", sm: "0px" },
@@ -192,8 +198,7 @@ const Shop = () => {
               display: "flex",
               justifyContent: "center",
               alignItems: "center",
-              paddingTop:"12px",
-
+              paddingTop: "12px",
               cursor: "pointer",
               margin: { xs: "auto", sm: "16px" },
               marginTop: { xs: "16px", sm: "0px" },
@@ -271,18 +276,40 @@ const Shop = () => {
                 sx={{
                   flexGrow: 1,
                   display: "flex",
+
                   alignItems: "center",
                   justifyContent: "center",
+                  // background: "red",
                 }}
               >
-                <ItemListCard
-                  productId={product.id}
-                  productImage={product.image}
-                  productTitle={product.name}
-                  productFeature={product.description}
-                  productPrice={product.price}
-                  productOldPrice={product.discountPrice}
-                />
+                {layout === "list" ? (
+                  <ItemCard
+                    productId={product.id}
+                    productImage={product.image}
+                    productTitle={product.name}
+                    productFeature={product.description}
+                    productPrice={product.price}
+                    productOldPrice={product.discountPrice}
+                  />
+                ) : layout === "grid" ? (
+                  <ItemListCard
+                    productId={product.id}
+                    productImage={product.image}
+                    productTitle={product.name}
+                    productFeature={product.description}
+                    productPrice={product.price}
+                    productOldPrice={product.discountPrice}
+                  />
+                ) : (
+                  <TwoColumnCard
+                    productId={product.id}
+                    productImage={product.image}
+                    productTitle={product.name}
+                    productFeature={product.description}
+                    productPrice={product.price}
+                    productOldPrice={product.discountPrice}
+                  />
+                )}
               </Grid2>
             ))
           ) : (

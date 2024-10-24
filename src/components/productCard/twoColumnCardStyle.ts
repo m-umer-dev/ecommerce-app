@@ -1,11 +1,21 @@
 
 export const style = {
-   
+    productContent: {
+        display: 'flex',
+        flexDirection:"column",
+        alignItems:"center",
+        jusfityContent: "center",
+        width:"100%"
+    },
+
     productDetail: {
         display: 'flex',
-        flexDirection: 'column',
-        alignItems: 'flex-start',
+        marginTop:'50px',
+        justifyContent: "space-around",
+        padding:'15px',
+        width:"100%"
     },
+
     productTitle: {
         color: 'black',
         fontFamily: 'Poppins',
@@ -22,28 +32,28 @@ export const style = {
         lineHeight: '15px',
 
     },
-    priceContent: {
+
+    priceDetail:{
         display: 'flex',
-        width: '100%',
-        alignItems: 'center',
-        flexDirection: 'flex-start',
-        justifyContent: "space-between",
-
+        alignItems:"center",
+        justifyContent: "space-around",
+        padding:'5px',
+        width:"100%"
     },
-
+   
     productPrice: {
         fontFamily: 'Poppins',
-        fontWeight: 600,
+        fontWeight: 550,
         fontSize: '18px',
-        lineHeight: '20px',
         color: 'black',
+        alignItems:"center",
+
 
     },
     productOldPrice: {
         fontFamily: 'Poppins',
-        fontWeight: 600,
+        fontWeight: 550,
         fontSize: '16px',
-        lineHeight: '24px',
         textDecoration: 'line-through',
         color: '#B0B0B0',
     },
@@ -63,11 +73,6 @@ export const style = {
         lineHeight: '24px',
         textAlign: 'left',
     },
-    productText: {
-        display: 'flex',
-        jusfityContent: "center",
-        
-    },
-
+   
 }
 
