@@ -1,5 +1,4 @@
 import { createSlice, PayloadAction } from "@reduxjs/toolkit";
-import image1 from "../../assets/products/image1.png";
 
 interface ProductCart {
   id: number;
@@ -10,6 +9,7 @@ interface ProductCart {
   image: string;
   discount: string;
   quantity: number; 
+  
  
 
 }
@@ -17,11 +17,14 @@ interface ProductCart {
 export interface CartState {
   product: ProductCart[];
   total: number; 
+  value: number;
 }
 
 const initialState: CartState = {
   product: [ ],
-  total: 0, 
+  total: 0,
+  value: 0, 
+
 };
 
 export const cartSlice = createSlice({
@@ -36,11 +39,14 @@ export const cartSlice = createSlice({
         state.product.push(action.payload);
       }
       state.total = state.product.reduce((acc, product) => acc + (product.price * product.quantity), 0);
+
+      state.value += 1
     },
     updateQuantity: (state, action: PayloadAction<{ id: number; quantity: number }>) => {
       const product = state.product.find(product => product.id === action.payload.id);
       if (product) {
         product.quantity = action.payload.quantity; 
+        
       }
       state.total = state.product.reduce((acc, product) => acc + (product.price * product.quantity), 0);
     },
@@ -48,6 +54,8 @@ export const cartSlice = createSlice({
       state.product = state.product.filter(product => product.id !== action.payload);
       
       state.total = state.product.reduce((acc, product) => acc + (product.price * product.quantity), 0);
+
+      state.value -= 1
     }
   },
 });

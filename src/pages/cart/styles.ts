@@ -3,7 +3,8 @@ export const style = {
         display: 'flex',
         
         justifyContent: 'space-evenly',
-        padding: '40px',
+        padding: '10px',
+        height: '100px',
     },
     leftBar: {
         display: 'flex',
@@ -11,13 +12,13 @@ export const style = {
         alignItems: 'center',
         background: '#F9F1E7',
         width: '60%',
-        padding: '20px',
+        padding: '10px',
     },
     barTitle: {
         fontFamily: 'Poppins',
         fontSize: '16px',
         fontWeight: '500',
-        lineHeight: '24px',
+        lineHeight: '2px',
         textAlign: 'left',
 
 
@@ -29,6 +30,8 @@ export const style = {
         justifyContent: 'center',
         background: '#F9F1E7',
         width: '25%',
+        height: '200px',
+
     },
     cartTitle: {
         fontFamily: 'Poppins',
@@ -40,7 +43,9 @@ export const style = {
     },
     boxSubTotal: {
         display: "flex",
-        justifyContent: "space-between",
+        alignItems:'center',
+        width:'50%',
+        justifyContent: "space-evenly",
 
     },
     cartSubTotal: {
@@ -63,7 +68,7 @@ export const style = {
         fontFamily: 'Poppins',
         fontSize: '20px',
         fontWeight: '500',
-        lineHeight: '30px',
+        lineHeight: '10px',
         color: '#B88E2F',
 
     },

@@ -1,11 +1,10 @@
 import { Box, Button, Grid2, Typography } from '@mui/material';
-import React from 'react';
 import { style } from './styles';
 import contactImage from "../../assets/contactBanner.jpg";
 import Badges from '../../components/badges/badges';
 import { useSelector } from "react-redux";
 import CartCard from './cartCard';
-import CustomButton from '../../components/customButtons/customButton';
+import EmptyCart from '../../assets/empty-cart.svg'
 
 interface CartValues {
   id: number; 
@@ -69,7 +68,15 @@ const Cart = () => {
           />
         </Box>
       ))}
-</Box> : <Typography sx={{display:'flex',justifyContent:"center",fontSize:"26px",}}>Cart is Empty</Typography>}
+</Box> : <Box sx={{width:'100%',diplay: 'flex',textAlign:'center'}}> 
+  <img
+src={EmptyCart}
+width='200px'
+height="200px"
+
+/> 
+</Box> }
+ <Typography sx={{display:'flex',justifyContent:"center",fontFamily:'Poppins',fontSize:"26px",}}>Cart is Empty</Typography>
 
       <Badges />
     </>

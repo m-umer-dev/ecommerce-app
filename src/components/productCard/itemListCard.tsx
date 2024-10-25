@@ -7,7 +7,7 @@ import { Box, Button, Grid2, Stack} from "@mui/material";
 import shareicon from "../../assets/shareicon.png";
 import compareicon from "../../assets/compareicon.png";
 import hearticon from "../../assets/hearticon.png";
-import { useDispatch } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
 import { addToCart } from "../../redux/slices/cartSlice";
 
 import { ToastContainer, toast } from "react-toastify";
@@ -30,7 +30,10 @@ const ItemListCard = ({
   productPrice,
   productOldPrice,
 }: ProductCardValues) => {
-  const dispatch = useDispatch();
+
+ 
+  const dispatch = useDispatch()
+
 
   const handleAddToCart = () => {
     const newProduct = {
@@ -77,7 +80,6 @@ const ItemListCard = ({
         image={productImage}
       />
       <ToastContainer />
-
       <Box sx={style.productDetail}>
         <CardContent>
           <Typography sx={style.productTitle}>{productTitle}</Typography>

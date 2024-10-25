@@ -83,13 +83,13 @@ const Shop = () => {
           alignItems: "center",
           background: "#F9F1E7",
           marginTop: "0px",
-          padding: { xs: "20px", sm: "30px", md: "40px", lg: "30px" },
+          padding: { xs: "20px", sm: "30px", md: "40px", lg: "18px" },
           flexDirection: { xs: "column", sm: "row" },
         }}
       >
         <TextField
           sx={{
-            width: { xs: "70%", sm: "50%", md: "20%" },
+            width: { xs: "50%", sm: "50%", md: "20%" },
           }}
           id="outlined-search"
           placeholder="Search Product"

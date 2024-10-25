@@ -31,6 +31,7 @@ import "@fontsource/montserrat/300.css";
 import "@fontsource/montserrat/400.css";
 import "@fontsource/montserrat/500.css";
 import "@fontsource/montserrat/700.css";
+import { useDispatch, useSelector } from "react-redux";
 interface Props {
   navigate?: string;
   navItems?: any;
@@ -41,6 +42,10 @@ const drawerWidth = 240;
 const navItems = ["Home", "Shop", "About", "Contact"];
 
 const Header = (props: Props) => {
+  const value = useSelector((state: any) => state.cart.value)
+  const dispatch = useDispatch()
+
+
   const { window } = props;
   const [mobileOpen, setMobileOpen] = React.useState(false);
 
@@ -92,8 +97,21 @@ const Header = (props: Props) => {
               <img src={logo}
               style={{width:"40px",height:"35px"}} />
               <Typography sx={style.logoText}>Furniro</Typography>
+              
             </Box>
+
+            
           </Box>
+          {/* not using at this time */}
+          <IconButton
+            color="inherit"
+            aria-label="open drawer"
+            edge="start"
+            onClick={handleDrawerToggle}
+            sx={{ mr: 4, display: { sm: "none" } }}
+          >
+            {/* <MenuIcon /> */}
+          </IconButton>
 
           <Box
             sx={{
@@ -125,9 +143,33 @@ const Header = (props: Props) => {
             <IconButton aria-label="Favorite" component={Link} to="/shop">
               <FavoriteIcon />
             </IconButton>
+
             <IconButton aria-label="cart" component={Link} to="/cart">
+           
               <ShoppingCartIcon />
+             
+     
+
             </IconButton>
+            { value !== 0?
+            <Box sx={{marginLeft:"-18px",width:"20px" ,height:"20px",
+            zIndex:'9',
+              textAlign:"center",
+              justifyContent:"center",
+              alignItems:"center",
+            
+
+              }}>
+                
+            <Typography sx={{background:"red",color:"white",
+            fontSize:"13px",
+            fontFamily:"Poppins",
+            fontWeight:100,
+              borderRadius:10,
+              
+            }} >{value}</Typography>
+
+            </Box>: <Box> </Box> }
           </Box>
         </Toolbar>
       </AppBar>
