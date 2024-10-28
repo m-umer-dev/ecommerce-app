@@ -38,7 +38,7 @@ const Categories = () => {
             >
               <CardMedia
                 sx={{
-                  height: 370,
+                  height: 400,
                   borderBottomLeftRadius: "8px",
                   borderBottomRightRadius: "8px",
                 }}
@@ -60,7 +60,7 @@ const Categories = () => {
             >
               <CardMedia
                 sx={{
-                  height: 370,
+                  height: 400,
                   borderBottomLeftRadius: "8px",
                   borderBottomRightRadius: "8px",
                 }}
@@ -81,7 +81,7 @@ const Categories = () => {
             >
               <CardMedia
                 sx={{
-                  height: 370,
+                  height: 400,
                   borderBottomLeftRadius: "8px",
                   borderBottomRightRadius: "8px",
                 }}

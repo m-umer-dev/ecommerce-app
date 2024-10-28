@@ -2,11 +2,8 @@ import React, { useState } from "react";
 import { style } from "./styles";
 import { Box, Button, Grid2, Typography } from "@mui/material";
 import { useSelector } from "react-redux";
-import ItemCard from "../productCard/itemCard";
-import image1 from "../../assets/products/image1.png";
 import ShowMore from "../customButtons/showMore";
 import ItemListCard from "../productCard/itemListCard";
-import CustomButton from "../customButtons/customButton";
 
 
 export const ProductList = () => {
