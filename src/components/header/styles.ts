@@ -1,3 +1,4 @@
+import { cursorTo } from "readline";
 
 export const style = {
     appbar: {
@@ -38,11 +39,18 @@ export const style = {
     },
     navText: {
         fontFamily: "Poppins",
+        padding: '15px',
+        
+        // justifyContent:"space-between",
         fontSize: '16px',
         fontWeight: '500',
-        lineHeight: '24px',
-        textAlign: "left",
+        lineHeight: '20px',
+        // textAlign: "center",
         color: 'black',
+        cursor:'pointer',
+    },
+    rightSideIcons:{
+        color:"black",
     }
 
 

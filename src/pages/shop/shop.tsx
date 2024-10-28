@@ -112,7 +112,7 @@ const Shop = () => {
                 textAlign: "left",
               }}
             >
-              Home{" "}
+              Home
             </Typography>
 
             <Stack >

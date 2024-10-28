@@ -1,18 +1,22 @@
+import { height, width } from '@mui/system';
 export const style = {
     mainBox: {
         display: 'flex',
-        
+        flexWrap: 'wrap',
         justifyContent: 'space-evenly',
-        padding: '10px',
-        height: '100px',
+        paddingTop: '10px',
+        // background: 'red',
+        width: '100%'
+
     },
     leftBar: {
-        display: 'flex',
+        display: { xl: 'flex', lg: 'flex', md: 'none', sm: 'none', xs: 'none' },
         justifyContent: 'space-evenly',
         alignItems: 'center',
+        height:'70px',
         background: '#F9F1E7',
-        width: '60%',
-        padding: '10px',
+        width: '100%',
+        // padding: '10px',
     },
     barTitle: {
         fontFamily: 'Poppins',
@@ -27,40 +31,44 @@ export const style = {
         display: 'flex',
         flexDirection: 'column',
         alignItems: 'center',
-        justifyContent: 'center',
+        // justifyContent: 'center',
         background: '#F9F1E7',
-        width: '25%',
+        width: '100%',
         height: '200px',
+        marginBottom:"20px",
+
 
     },
     cartTitle: {
         fontFamily: 'Poppins',
         fontSize: '32px',
         fontWeight: '600',
-        lineHeight: '48px',
+        marginTop:'25px',
+        lineHeight: '20px',
         textAlign: 'left',
 
     },
     boxSubTotal: {
         display: "flex",
-        alignItems:'center',
-        width:'50%',
-        justifyContent: "space-evenly",
+        alignItems: 'center',
+        width: '50%',
+        justifyContent: "space-around",
 
     },
     cartSubTotal: {
 
         fontFamily: 'Poppins',
         fontSize: '16px',
-        fontWeight: '500',
-        lineHeight: '24px',
+        fontWeight: '450',
+        lineHeight: '10px',
+        marginTop:'20px',
         // textAlign: 'left',
     },
     subTotalPrice: {
         fontFamily: 'Poppins',
         fontSize: '16px',
         fontWeight: '400',
-        lineHeight: '24px',
+        lineHeight: '20px',
         color: '#9F9F9F',
 
     },
@@ -69,6 +77,7 @@ export const style = {
         fontSize: '20px',
         fontWeight: '500',
         lineHeight: '10px',
+        marginTop:'20px',
         color: '#B88E2F',
 
     },
@@ -141,14 +150,14 @@ export const style = {
         lineHeight: '24px',
         textAlign: 'left',
     },
-    chekOutbutton:{
+    chekOutbutton: {
         fontFamily: 'Poppins',
         background: 'none',
         color: 'black',
         borderColor: "black",
         marginTop: '10px',
-        marginBottom:'10px',
-        
+        marginBottom: '10px',
+
     }
 
 

@@ -34,31 +34,37 @@ const CartCard = ({
     dispatch(updateQuantity({ id: productId, quantity: newQuantity }));
 
     toast.success("Deleted !", {
-        position: "top-right",
-        className: "foo-bar",
-      });
-  
-      toast.warn("Warning Notification !", {
-        position: "bottom-left",
-      });
+      position: "top-right",
+      className: "foo-bar",
+    });
+
+    toast.warn("Warning Notification !", {
+      position: "bottom-left",
+    });
   };
 
   const handleDelete = () => {
-    
-    dispatch(deleteFromCart(productId))
+    dispatch(deleteFromCart(productId));
 
-   
     toast.error("Deleted !", {
-        position: "top-right",
-        className: "foo-bar",
-      });   
+      position: "top-right",
+      className: "foo-bar",
+    });
   };
 
   return (
     <Box
       sx={{
-        width: "60%",
+        width: "100%",
         display: "flex",
+        flexDirection: {
+          xs: "column",
+          sm: "column",
+          md: "row",
+          lg: "row",
+          xl: "row",
+        },
+        padding: "15px",
         justifyContent: "space-around",
         alignItems: "center",
       }}
@@ -70,6 +76,14 @@ const CartCard = ({
           height: "100px",
           background: "#F4F5F7",
           display: "flex",
+
+          flexDirection: {
+            xs: "column",
+            sm: "column",
+            md: "row",
+            lg: "row",
+            xl: "row",
+          },
         }}
       >
         <CardMedia
@@ -88,6 +102,14 @@ const CartCard = ({
           alignItems: "center",
           padding: "5px",
           width: "100%",
+
+          flexDirection: {
+            xs: "row",
+            sm: "row",
+            md: "row",
+            lg: "row",
+            xl: "row",
+          },
         }}
       >
         <Typography sx={style.productTitle}>{productTitle}</Typography>
@@ -101,12 +123,10 @@ const CartCard = ({
           sx={{ width: "60px", marginTop: "10px", textAlign: "center" }}
         />
 
-        {/* <Button
+        <DeleteIcon
           onClick={handleDelete}
-          sx={{ marginTop: "10px", marginLeft: "20px", color: "#B88E2F" }}
-        > */}
-          <DeleteIcon  onClick={handleDelete}  sx={{ marginTop: "10px", marginLeft: "20px", color: "#B88E2F" }}/>
-        {/* </Button> */}
+          sx={{ marginTop: "10px", marginLeft: "10px", color: "#B88E2F" }}
+        />
       </CardContent>
     </Box>
   );

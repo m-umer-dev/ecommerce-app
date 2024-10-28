@@ -51,7 +51,7 @@ const CustomButtonComponent: React.FC<Props> = ({
               fontSize: "16px",
               fontWeight: "700",
               lineHeight: "24px",
-              color: "green",
+              color: "black",
 
               backgroundColor: background,
 

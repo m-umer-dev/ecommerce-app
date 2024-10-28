@@ -51,6 +51,7 @@ const Header = (props: Props) => {
   const handleDrawerToggle = () => {
     setMobileOpen((prevState) => !prevState);
   };
+ 
 
   const navigate = useNavigate();
 
@@ -70,7 +71,7 @@ const Header = (props: Props) => {
     window !== undefined ? () => window().document.body : undefined;
 
   return (
-    <Box sx={{ display: "flex", background: "red" }}>
+    <Box sx={{ display: "flex", }}>
       <CssBaseline />
       <AppBar component="nav" sx={{ background: "white", color: "black" }}>
         <Toolbar>
@@ -79,10 +80,12 @@ const Header = (props: Props) => {
             aria-label="open drawer"
             edge="start"
             onClick={handleDrawerToggle}
-            sx={{ mr: 2, display: { sm: "none" } }}
+            sx={{ mr: 2, display: { sm: "block",lg:"none",md:"none" } }}
           >
             <MenuIcon />
           </IconButton>
+
+
           <Box
             sx={{
               display: "flex",
@@ -107,7 +110,9 @@ const Header = (props: Props) => {
               <Typography sx={style.logoText}>Furniro</Typography>
             </Box>
           </Box>
-          {/* not using at this time */}
+
+
+          {/* Right Side Menu on Small Devices  View */}
           <IconButton
             color="inherit"
             aria-label="open drawer"
@@ -116,18 +121,22 @@ const Header = (props: Props) => {
             sx={{ mr: 4, display: { sm: "none" } }}
           >
             {/* <MenuIcon /> */}
+           
+            
           </IconButton>
 
           <Box
             sx={{
-              flexGrow: 1,
-              display: { xs: "none", sm: "block", lg: "flex" },
+              flexGrow: 2,
+              display: { xs: "none", sm: "flex", lg: "flex" },
+              alignItems:'center',
+              justifyContent:'center',
             }}
           >
             {navItems.map((item) => (
-              <Button sx={style.navText} key={item} onClick={() => goTo(item)}>
+              <Typography sx={style.navText} key={item} onClick={() => goTo(item)}>
                 {item}
-              </Button>
+              </Typography>
             ))}
           </Box>
 
@@ -139,17 +148,17 @@ const Header = (props: Props) => {
               display: { lg: "flex", xs: "none", sm: "none" },
             }}
           >
-            <IconButton aria-label="user" component={Link} to="/shop">
+            <IconButton aria-label="user" component={Link} to="/shop" sx={style.rightSideIcons}>
               <PersonOutlineIcon />
             </IconButton>
-            <IconButton aria-label="search" component={Link} to="/shop">
+            <IconButton aria-label="search" component={Link} to="/blogs" sx={style.rightSideIcons}>
               <SearchIcon />
             </IconButton>
-            <IconButton aria-label="Favorite" component={Link} to="/shop">
+            <IconButton aria-label="Favorite" component={Link} to="/shop" sx={style.rightSideIcons}>
               <FavoriteIcon />
             </IconButton>
 
-            <IconButton aria-label="cart" component={Link} to="/cart">
+            <IconButton aria-label="cart" component={Link} to="/cart" sx={style.rightSideIcons}>
               <ShoppingCartIcon />
             </IconButton>
             {value !== 0 ? (
@@ -182,6 +191,8 @@ const Header = (props: Props) => {
             )}
           </Box>
         </Toolbar>
+
+        
       </AppBar>
       <nav>
         <Drawer
@@ -193,7 +204,7 @@ const Header = (props: Props) => {
             keepMounted: true,
           }}
           sx={{
-            display: { xs: "block", sm: "none" },
+            display: { xs: "block", sm: "block" },
             "& .MuiDrawer-paper": {
               boxSizing: "border-box",
               width: drawerWidth,

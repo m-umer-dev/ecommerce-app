@@ -28,7 +28,7 @@ const Categories = () => {
           >
             <Card
               sx={{
-                width: 280,
+                width: 370,
                 display: "flex",
                 flexDirection: "column",
                 alignContent: "center",
@@ -38,7 +38,7 @@ const Categories = () => {
             >
               <CardMedia
                 sx={{
-                  height: 350,
+                  height: 370,
                   borderBottomLeftRadius: "8px",
                   borderBottomRightRadius: "8px",
                 }}
@@ -50,7 +50,7 @@ const Categories = () => {
 
             <Card
               sx={{
-                width: 280,
+                width: 370,
                 display: "flex",
                 flexDirection: "column",
                 alignContent: "center",
@@ -60,7 +60,7 @@ const Categories = () => {
             >
               <CardMedia
                 sx={{
-                  height: 350,
+                  height: 370,
                   borderBottomLeftRadius: "8px",
                   borderBottomRightRadius: "8px",
                 }}
@@ -71,7 +71,7 @@ const Categories = () => {
             </Card>
             <Card
               sx={{
-                width: 280,
+                width: 370,
                 display: "flex",
                 flexDirection: "column",
                 alignContent: "center",
@@ -81,7 +81,7 @@ const Categories = () => {
             >
               <CardMedia
                 sx={{
-                  height: 350,
+                  height: 370,
                   borderBottomLeftRadius: "8px",
                   borderBottomRightRadius: "8px",
                 }}
