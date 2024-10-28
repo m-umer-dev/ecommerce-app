@@ -5,6 +5,8 @@ import image3 from "../../assets/careosel3.png";
 import { Box, Grid2, Typography } from "@mui/material";
 import CustomButton from "../customButtons/customButton";
 import { style } from "./styles";
+import CustomButtonComponent from "../customButtons/customButtonComponent";
+import { useNavigate } from "react-router-dom";
 
 const Carousele = () => {
   const images = [image1, image2, image3];
@@ -18,6 +20,12 @@ const Carousele = () => {
     return () => clearInterval(autoPlay);
   }, [images.length]);
 
+  const navigate = useNavigate();
+
+  const goTo =()=>{
+    navigate("/shop");
+  }
+
   return (
     <Grid2
       container
@@ -28,7 +36,7 @@ const Carousele = () => {
         alignItems: "center",
         background: "#FCF8F3",
         padding: "40px",
-        margin: "20px",
+        // margin: "20px",
       }}
     >
       <Box
@@ -47,7 +55,19 @@ const Carousele = () => {
           nulla quis eros convallis, ut vestibulum ex fringilla.
         </Typography>
         <Box sx={{marginLeft:'10px'}}>
-        <CustomButton  buttonText="Explore More" />
+        <CustomButtonComponent
+                // type="submit"
+                border="none"
+                color="white"
+                background="#B88E2F"
+                height="50px"
+                radius="0px"
+                width="150px"
+                children="Explore More"
+                onClick={goTo}
+                
+               
+              />
 
         </Box>
 

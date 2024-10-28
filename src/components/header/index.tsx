@@ -42,9 +42,8 @@ const drawerWidth = 240;
 const navItems = ["Home", "Shop", "About", "Contact"];
 
 const Header = (props: Props) => {
-  const value = useSelector((state: any) => state.cart.value)
-  const dispatch = useDispatch()
-
+  const value = useSelector((state: any) => state.cart.value);
+  const dispatch = useDispatch();
 
   const { window } = props;
   const [mobileOpen, setMobileOpen] = React.useState(false);
@@ -93,14 +92,20 @@ const Header = (props: Props) => {
             }}
           >
             <Box />
-            <Box sx={{ display: "flex"}}>
-              <img src={logo}
-              style={{width:"40px",height:"35px"}} />
+            <Box
+              component={Link}
+              to="/shop"
+              sx={{
+                display: "flex",
+                width: "35px",
+                height: "35px",
+                listStyle: "none",
+                textDecoration: "none",
+              }}
+            >
+              <img src={logo} />
               <Typography sx={style.logoText}>Furniro</Typography>
-              
             </Box>
-
-            
           </Box>
           {/* not using at this time */}
           <IconButton
@@ -145,31 +150,36 @@ const Header = (props: Props) => {
             </IconButton>
 
             <IconButton aria-label="cart" component={Link} to="/cart">
-           
               <ShoppingCartIcon />
-             
-     
-
             </IconButton>
-            { value !== 0?
-            <Box sx={{marginLeft:"-18px",width:"20px" ,height:"20px",
-            zIndex:'9',
-              textAlign:"center",
-              justifyContent:"center",
-              alignItems:"center",
-            
-
-              }}>
-                
-            <Typography sx={{background:"red",color:"white",
-            fontSize:"13px",
-            fontFamily:"Poppins",
-            fontWeight:100,
-              borderRadius:10,
-              
-            }} >{value}</Typography>
-
-            </Box>: <Box> </Box> }
+            {value !== 0 ? (
+              <Box
+                sx={{
+                  marginLeft: "-18px",
+                  width: "20px",
+                  height: "20px",
+                  zIndex: "9",
+                  textAlign: "center",
+                  justifyContent: "center",
+                  alignItems: "center",
+                }}
+              >
+                <Typography
+                  sx={{
+                    background: "red",
+                    color: "white",
+                    fontSize: "13px",
+                    fontFamily: "Poppins",
+                    fontWeight: 100,
+                    borderRadius: 10,
+                  }}
+                >
+                  {value}
+                </Typography>
+              </Box>
+            ) : (
+              <Box> </Box>
+            )}
           </Box>
         </Toolbar>
       </AppBar>
@@ -180,7 +190,7 @@ const Header = (props: Props) => {
           open={mobileOpen}
           onClose={handleDrawerToggle}
           ModalProps={{
-            keepMounted: true, 
+            keepMounted: true,
           }}
           sx={{
             display: { xs: "block", sm: "none" },
@@ -203,7 +213,6 @@ const Header = (props: Props) => {
               </Button>
             ))}
           </Box>
-
         </Drawer>
       </nav>
     </Box>

@@ -13,26 +13,29 @@ import CheckOut from "./pages/checkOut/checkOut";
 import Cart from "./pages/cart/cart";
 import ProductView from "./pages/productDisplay/productView";
 
-import '@fontsource/poppins/300.css';
-import '@fontsource/poppins/400.css';
-import '@fontsource/poppins/500.css';
-import '@fontsource/poppins/700.css';
+import "@fontsource/poppins/300.css";
+import "@fontsource/poppins/400.css";
+import "@fontsource/poppins/500.css";
+import "@fontsource/poppins/700.css";
 
-import '@fontsource/montserrat/300.css';
-import '@fontsource/montserrat/400.css';
-import '@fontsource/montserrat/500.css';
-import '@fontsource/montserrat/700.css';
+import "@fontsource/montserrat/300.css";
+import "@fontsource/montserrat/400.css";
+import "@fontsource/montserrat/500.css";
+import "@fontsource/montserrat/700.css";
 import AboutUs from "./pages/about/aboutUs";
-
+import PageNotFound from "./pages/pageNotFound";
 
 const Layout = () => (
   <>
     <Header />
-    
+
     <Outlet />
-    <Footer/>
+
+    <Footer />
   </>
 );
+
+
 
 function App() {
   const routers = createBrowserRouter([
@@ -53,7 +56,7 @@ function App() {
         },
         {
           path: "/cart",
-          element: <Cart />
+          element: <Cart />,
         },
         {
           path: "/blogs",
@@ -61,28 +64,25 @@ function App() {
         },
         {
           path: "/contact",
-          element: <Contact/>,
-
+          element: <Contact />,
         },
         {
           path: "/aboutUs",
-          element: <AboutUs/>
+          element: <AboutUs />,
         },
         {
           path: "/checkOut",
-          element: <CheckOut/>,
-
+          element: <CheckOut />,
         },
         {
           path: "/userdata",
-          element: <UsersRecord/>,
-
+          element: <UsersRecord />,
         },
-        {
-          path: "*",
-          element: "Page Not Found",
-        },
-      ],
+       
+      ]
+    },
+    { path: "*", 
+      element: <PageNotFound /> 
     },
   ]);
 

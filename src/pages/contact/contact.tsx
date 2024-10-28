@@ -6,7 +6,6 @@ import {
   TextField,
   Typography,
 } from "@mui/material";
-import React from "react";
 import { style } from "./styles";
 import contactImage from "../../assets/contactBanner.jpg";
 import LocationOnIcon from "@mui/icons-material/LocationOn";
@@ -14,10 +13,13 @@ import PhoneIcon from "@mui/icons-material/Phone";
 import ClockIcon from "@mui/icons-material/WatchLater";
 import { useDispatch, useSelector } from "react-redux";
 import { useForm } from "react-hook-form";
-import CustomButton from "../../components/customButtons/customButton";
 import { getUserData } from "../../redux/slices/usersSlice";
 import Badges from "../../components/badges/badges";
 import { toast, ToastContainer } from "react-toastify";
+import ArrowForwardIosIcon from "@mui/icons-material/ArrowForwardIos";
+import logo from "../../assets/logo.png";
+import { useNavigate } from "react-router-dom";
+import CustomButtonComponent from "../../components/customButtons/customButtonComponent";
 
 interface ContactFormValues {
   id: number;
@@ -34,11 +36,8 @@ const Contact = () => {
     handleSubmit,
     formState: { errors },
   } = useForm<ContactFormValues>();
-  //   const navigate = useNavigate();
 
   const onSubmit = (data: ContactFormValues) => {
-   
-
     dispatch(
       getUserData([
         ...allContact,
@@ -51,12 +50,20 @@ const Contact = () => {
         },
       ])
     );
-    // console.log(data);
+    console.log(data);
     toast.success("Submitted", {
       position: "top-right",
-       className: 'foo-bar'
+      className: "foo-bar",
     });
+   
+
   };
+
+  const navigate = useNavigate();
+  const goTo = () => {
+    navigate("/");
+  };
+  
   return (
     <>
       <ToastContainer />
@@ -69,8 +76,57 @@ const Contact = () => {
           backgroundRepeat: "no-repeat",
           marginTop: "66px",
           height: "400px",
+
+          display: "flex",
+          flexDirection: "column",
+          justifyContent: "center",
+          alignItems: "center",
         }}
-      ></Box>
+      >
+        <Box
+          sx={{
+            display: "flex",
+            flexDirection: "column",
+            alignItems: "center",
+          }}
+        >
+          <img src={logo} />
+          <Box sx={{ display: "flex", alignItems: "center", padding: "5px" }}>
+            <Typography
+              className="txt"
+              onClick={goTo}
+              sx={{
+                cursor: "pointer",
+                "&:hover": {
+                  textDecoration: "underline",
+                },
+                fontFamily: "Poppins",
+                fontSize: "16px",
+                fontWeight: "550",
+                lineHeight: "24px",
+                textAlign: "left",
+              }}
+            >
+              Home{" "}
+            </Typography>
+
+            <Stack>
+              <ArrowForwardIosIcon sx={{ fontSize: "1.10rem" }} />
+            </Stack>
+            <Typography
+              sx={{
+                fontFamily: "Poppins",
+                fontSize: "16px",
+                fontWeight: "400",
+                lineHeight: "24px",
+                textAlign: "left",
+              }}
+            >
+              Contact
+            </Typography>
+          </Box>
+        </Box>
+      </Box>
 
       <Box sx={style.mainBox}>
         <Grid2 size={{ xl: 6, lg: 6, md: 6, sm: 12, xs: 12 }}>
@@ -140,10 +196,6 @@ const Contact = () => {
                 fullWidth
                 {...register("name", { required: "Enter Your Name" })}
                 sx={style.inputLabelTitle}
-                // sx={{
-                //   marginTop: "20px",
-                //   color: "white",
-                // }}
               />
               {errors.name && (
                 <span style={{ color: "red" }}>{errors.name.message}</span>
@@ -173,10 +225,6 @@ const Contact = () => {
                 type="text"
                 fullWidth
                 {...register("subject", { required: "Enter Subject" })}
-                // sx={{
-                //   marginTop: "20px",
-                //   color: "white",
-                // }}
                 sx={style.inputLabelTitle}
               />
               {errors.subject && (
@@ -191,23 +239,24 @@ const Contact = () => {
                 multiline
                 type="text"
                 {...register("message", { required: "message" })}
-                // sx={{
-                //   marginTop: "20px",
-                //   color: "white",
-                // }}
                 sx={style.inputLabelTitle}
                 rows={3}
               />
               {errors.message && (
                 <span style={{ color: "red" }}>{errors.message.message}</span>
               )}
-              <Button
-                type="submit"
-                sx={{
-                  marginTop: "20px",
-                }}
-              >
-                <CustomButton buttonText="Submit" />
+
+              <Button type="submit" sx={{ marginTop: "20px" }}>
+                <CustomButtonComponent
+                  type="submit"
+                  border="none"
+                  color="white"
+                  background="#B88E2F"
+                  height="50px"
+                  radius="5px"
+                  width="150px"
+                  children="Submit"
+                />
               </Button>
             </Box>
           </Box>

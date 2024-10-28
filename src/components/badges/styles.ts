@@ -1,3 +1,5 @@
+
+
 export const style = {
     mainBox: {
         background: '#FAF3EA',
@@ -5,7 +7,7 @@ export const style = {
         flexWrap:"wrap",
         justifyContent: 'center',
         alignItems: "center",
-        padding: '40px'
+        padding: '20px',
 
 
     },
@@ -22,7 +24,7 @@ export const style = {
     title: {
         fontFamily: 'Poppins',
         fontSize: "20px",
-        fontWeight: "600",
+        fontWeight: "550",
         lineHeight: "20px",
         textAlign: {xs:"center",sm:"center",md:"left",lg:"left",xl:"left"},
 
@@ -40,6 +42,7 @@ export const style = {
     },
     imag:{
         width: '40px',
+        padding:'2px',
 
     }
 

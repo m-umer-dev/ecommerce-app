@@ -8,33 +8,20 @@ import highQualityIcon from "../../assets/badgesImages/highQuality.png";
 const Badges = () => {
   return (
     <div>
-      <Box
-        sx={style.mainBox}
-       
-      >
-        <Box
-       
-          sx={style.contentBox}
-       
-        >
+      <Box sx={style.mainBox}>
+        <Box sx={style.contentBox}>
           <Stack sx={style.imag}>
-          <img src={highQualityIcon} />
-
+            <img src={highQualityIcon} />
           </Stack>
           <Box>
             <Typography sx={style.title}>Quality</Typography>
-            <Typography sx={style.subTitle}>
-              crafted top materials
-            </Typography>
+            <Typography sx={style.subTitle}>crafted top materials</Typography>
           </Box>
         </Box>
 
-        <Box
-          sx={style.contentBox}
-         
-        >
+        <Box sx={style.contentBox}>
           <Stack sx={style.imag}>
-          <img src={warrantyIcon} />
+            <img src={warrantyIcon} />
           </Stack>
           <Box>
             <Typography sx={style.title}>Warranty</Typography>
@@ -42,13 +29,9 @@ const Badges = () => {
           </Box>
         </Box>
 
-        
-        <Box
-          sx={style.contentBox}
-         
-        >
+        <Box sx={style.contentBox}>
           <Stack sx={style.imag}>
-          <img src={shippingIcon} />
+            <img src={shippingIcon} />
           </Stack>
           <Box>
             <Typography sx={style.title}>Free shipping</Typography>
@@ -56,13 +39,9 @@ const Badges = () => {
           </Box>
         </Box>
 
-        <Grid2
-          sx={style.contentBox}
-          
-        >
+        <Grid2 sx={style.contentBox}>
           <Stack sx={style.imag}>
-          <img src={supportIcon}  />
-
+            <img src={supportIcon} />
           </Stack>
           <Box>
             <Typography sx={style.title}>24 / 7 Support</Typography>

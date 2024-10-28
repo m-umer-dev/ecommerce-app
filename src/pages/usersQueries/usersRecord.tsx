@@ -4,6 +4,7 @@ import { useSelector } from 'react-redux';
 import { UserCard } from './userCard';
 import CustomButton from '../../components/customButtons/customButton';
 import { useNavigate } from 'react-router-dom';
+import CustomButtonComponent from '../../components/customButtons/customButtonComponent';
 
 
 const UsersRecord = () => {
@@ -33,7 +34,17 @@ const UsersRecord = () => {
         ))}
       </Grid2>
     </Box>
-    <Button onClick={goBack}><CustomButton buttonText=' Back'/></Button>
+  
+   <CustomButtonComponent
+   border="none"
+   color="white"
+  background= "#B88E2F"
+   height = "50px"
+   onClick={() => goBack}
+   radius = "10px"
+   width = "150px"
+   children = "Back"
+        />
     </Box>
    
   </>

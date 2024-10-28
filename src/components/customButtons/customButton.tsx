@@ -4,12 +4,14 @@ import { Button } from '@mui/material';
 
 
 interface ButtonValues{
-    buttonText: string;
+  children?: React.ReactNode;
+
+    onClick: () => void;
 }
-const CustomButton = ({buttonText}:ButtonValues) => {
+const CustomButton = ({children,onClick,}:ButtonValues) => {
   return (
     
-    <Button sx={style.exploreMore}>{buttonText}</Button>
+    <Button onClick={onClick} sx={style.exploreMore}>{children}</Button>
     
   )
 }

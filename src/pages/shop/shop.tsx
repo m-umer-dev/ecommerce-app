@@ -3,9 +3,12 @@ import { useSelector } from "react-redux";
 import { style } from "./styles";
 import {
   Box,
+  Button,
   Grid2,
   InputLabel,
+  Link,
   MenuItem,
+  Stack,
   TextField,
   Typography,
 } from "@mui/material";
@@ -20,8 +23,17 @@ import GridViewIcon from "@mui/icons-material/GridView";
 import ItemListCard from "../../components/productCard/itemListCard";
 import ItemCard from "../../components/productCard/itemCard";
 import TwoColumnCard from "../../components/productCard/twoColumnCard";
+import { useNavigate } from "react-router-dom";
+import ArrowForwardIosIcon from "@mui/icons-material/ArrowForwardIos";
+import logo from "../../assets/logo.png";
 
 const Shop = () => {
+  const navigate = useNavigate();
+
+  const goTo = () => {
+    navigate("/");
+  };
+
   const allProducts = useSelector((state: any) => state.product.product);
 
   const [searchItem, setSearchItem] = useState("");
@@ -73,8 +85,53 @@ const Shop = () => {
           backgroundRepeat: "no-repeat",
           marginTop: "66px",
           height: "400px",
+
+          display: "flex",
+          flexDirection: "column",
+          justifyContent: "center",
+          alignItems: "center",
         }}
-      ></Box>
+      >
+        <Box  sx={{ display: "flex",flexDirection:"column" ,alignItems:'center' }}>
+          <img src={logo} />
+          <Box
+            sx={{ display: "flex", alignItems:'center', padding:'5px' }}
+          >
+            <Typography
+              className="txt"
+              onClick={goTo}
+              sx={{
+                cursor: "pointer",
+                "&:hover": {
+                  textDecoration: "underline",
+                },
+                fontFamily: "Poppins",
+                fontSize: "16px",
+                fontWeight: "550",
+                lineHeight: "24px",
+                textAlign: "left",
+              }}
+            >
+              Home{" "}
+            </Typography>
+
+            <Stack >
+              <ArrowForwardIosIcon  sx={{fontSize: '1.10rem'}}/>
+            </Stack>
+            <Typography
+              sx={{
+                fontFamily: "Poppins",
+                fontSize: "16px",
+                fontWeight: "400",
+                lineHeight: "24px",
+                textAlign: "left",
+              }}
+            >
+              Shop
+            </Typography>
+          </Box>
+        </Box>
+      </Box>
 
       <Box
         sx={{
@@ -89,7 +146,7 @@ const Shop = () => {
       >
         <TextField
           sx={{
-            width: { xs: "50%", sm: "50%", md: "20%" },
+            width: { xs: "50%", sm: "50%", md: "20%", lg: "13%" },
           }}
           id="outlined-search"
           placeholder="Search Product"
@@ -101,7 +158,7 @@ const Shop = () => {
 
         <FormControl
           sx={{
-            width: { xs: "70%", sm: "50%", md: "15%" },
+            width: { xs: "70%", sm: "50%", md: "15%", lg: "13%" },
             marginTop: { xs: "16px", sm: "0px" },
           }}
         >
@@ -126,7 +183,7 @@ const Shop = () => {
 
         <FormControl
           sx={{
-            width: { xs: "70%", sm: "50%", md: "15%" },
+            width: { xs: "70%", sm: "50%", md: "15%", lg: "13%" },
             marginTop: { xs: "16px", sm: "0px" },
           }}
         >

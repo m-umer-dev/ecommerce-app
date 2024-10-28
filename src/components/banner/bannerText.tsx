@@ -7,9 +7,18 @@ import Button from '@mui/material/Button';
 import Typography from '@mui/material/Typography';
 import CustomButton from '../customButtons/customButton';
 import {style} from './styles';
+import { useNavigate } from 'react-router-dom';
+import CustomButtonComponent from '../customButtons/customButtonComponent';
 
 
+  
+const BannerText = () => {
+  const navigate = useNavigate();
 
+  const goTo= ()=>{
+    console.log("clicked");
+    navigate("/shop");
+  }
   const card = (
     <React.Fragment>
       <CardContent>
@@ -26,13 +35,16 @@ import {style} from './styles';
         </Typography>
       </CardContent>
       <CardActions>
-        {/* <Button sx={style.buyButton}> */}
-          <CustomButton buttonText='Buy Now'/>
-        
+          <CustomButtonComponent 
+          mode='outlined'
+                radius="0px"
+                children="Buy Now"
+                onClick={goTo}
+               
+              />
       </CardActions>
     </React.Fragment>
   );
-const BannerText = () => {
   return (
     <Box sx={{ maxWidth: 643,display:{sm:12,xs:12},flexWrap:"wrap",padding:{xs:"0px",sm:"0px",lg:"0px"},justifyContent:{xs:"center"},
      }}>
