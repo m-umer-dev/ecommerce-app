@@ -14,6 +14,7 @@ interface Props {
   marginTop?: string;
   mode?: string;
   paddingTop?: string;
+  padding?:string;
 }
 
 const CustomButtonComponent: React.FC<Props> = ({
@@ -27,11 +28,12 @@ const CustomButtonComponent: React.FC<Props> = ({
   background,
   mode,
   marginTop,
+  padding,
 }) => {
   return (
     <Button
       onClick={onClick}
-      sx={
+      sx={ 
         mode !== "outline"
           ? {
               fontFamily: " Poppins",
@@ -50,15 +52,15 @@ const CustomButtonComponent: React.FC<Props> = ({
               fontFamily: " Poppins",
               fontSize: "16px",
               fontWeight: "700",
-              lineHeight: "24px",
-              color: "black",
+              lineHeight: "20px",
+              color: color,
 
               backgroundColor: background,
 
-              border,
+              border:'1px solid black',
               borderRadius: radius,
-              height,
-              width,
+              height:height,
+              width:width,
             }
       }
     >
