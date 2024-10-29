@@ -32,7 +32,7 @@ const Home = () => {
 
        
       </Box>
-      <SingleProductDisplay/>
+      {/* <SingleProductDisplay/> */}
 
       <Categories/>
       <ProductList/>

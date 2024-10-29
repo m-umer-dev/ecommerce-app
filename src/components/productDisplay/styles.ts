@@ -30,7 +30,7 @@ export const style = {
         flexWrap: 'wrap',
     },
     featureBox: {
-        width: '18%',
+        width: '20%',
         display:{xs:'none',sm:'none',md:'flex',lg:'flex',xl:'flex'},
         flexDirection:'column',
        
@@ -111,7 +111,7 @@ export const style = {
     },
     sizeButton: {
 
-        width: '35%',
+        width: '40%',
         display: 'flex',
         justifyContent: 'space-between',
         marginTop: '10px',
@@ -129,7 +129,7 @@ export const style = {
     },
     colorButton: {
 
-        width: '20%',
+        width: '30%',
         display: 'flex',
         justifyContent: 'space-around',
 
