@@ -1,3 +1,4 @@
+import { cursorTo } from 'readline';
 
 export const style = {
    
@@ -54,6 +55,7 @@ export const style = {
         fontWeight: '600',
         lineHeight: '24px',
         color: 'white',
+        cursor: 'pointer',
 
     },
     btnText: {

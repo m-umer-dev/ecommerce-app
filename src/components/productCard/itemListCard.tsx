@@ -12,6 +12,7 @@ import { addToCart } from "../../redux/slices/cartSlice";
 
 import { ToastContainer, toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
+import { useNavigate } from "react-router-dom";
 
 interface ProductCardValues {
   productId: number;
@@ -34,6 +35,11 @@ const ItemListCard = ({
  
   const dispatch = useDispatch()
 
+const navigate = useNavigate();
+
+const handleProductView = () =>{
+  navigate("/product");
+}
 
   const handleAddToCart = () => {
     const newProduct = {
@@ -46,6 +52,7 @@ const ItemListCard = ({
       discount: "New",
       quantity: 1,
     };
+
 
     console.log("Dispatching add to cart", newProduct);
     dispatch(addToCart(newProduct));
@@ -67,17 +74,30 @@ const ItemListCard = ({
         overflow: "hidden",
         "&:hover .overlay": {
           opacity: 1,
+          // zIndex:-9,
+          
+          
         },
         "&:hover .centerButton": {
           opacity: 1,
+          // zIndex:9,
+
         },
+        "&:hover .overlayNew":{
+          opacity:1,
+          // zIndex:9,
+
+
+        }
       }}
+
     >
       <CardMedia
         component="img"
         alt={productTitle}
         height="240px"
         image={productImage}
+
       />
       <ToastContainer />
       <Box sx={style.productDetail}>
@@ -94,6 +114,7 @@ const ItemListCard = ({
         </CardContent>
       </Box>
 
+     
       <Box
         className="overlay"
         sx={{
@@ -110,7 +131,24 @@ const ItemListCard = ({
           justifyContent: "center",
           alignItems: "center",
         }}
+onClick={handleProductView}
       >
+        </Box>
+        <Box 
+         className="overlayNew"
+         sx={{
+           position: "absolute",
+           top: 0,
+           left: 0,
+           width: "100%",
+           opacity: 0,
+           display: "flex",
+           marginTop:'50%',
+           flexDirection: "column",
+           justifyContent: "center",
+           alignItems: "center",
+         }}
+        >
         <Button
           className="centerButton"
           variant="contained"
@@ -124,12 +162,14 @@ const ItemListCard = ({
             fontSize: "15px",
             textAlign: "center",
             borderRadius: "0px",
+            
             mb: 2,
           }}
           onClick={handleAddToCart}
         >
           Add to Cart
         </Button>
+     
         <Box
           sx={{
             display: "flex",
@@ -137,6 +177,7 @@ const ItemListCard = ({
             justifyContent: "space-evenly",
             width: "80%",
           }}
+
         >
           <Grid2>
             <Box
@@ -183,7 +224,9 @@ const ItemListCard = ({
             </Box>
           </Grid2>
         </Box>
-      </Box>
+        </Box>
+      
+    
     </Card>
   );
 };

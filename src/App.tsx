@@ -24,6 +24,7 @@ import "@fontsource/montserrat/500.css";
 import "@fontsource/montserrat/700.css";
 import AboutUs from "./pages/about/aboutUs";
 import PageNotFound from "./pages/pageNotFound";
+import { SingleProductDisplay } from "./components/productDisplay/singleProductDisplay";
 
 const Layout = () => (
   <>
@@ -77,6 +78,10 @@ function App() {
         {
           path: "/userdata",
           element: <UsersRecord />,
+        },
+        {
+          path: "/product",
+          element: <SingleProductDisplay />,
         },
        
       ]

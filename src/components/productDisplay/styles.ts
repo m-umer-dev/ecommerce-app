@@ -7,7 +7,7 @@ export const style = {
         display: 'flex',
         background: '#F9F1E7',
         padding: '30px',
-        marginTop: '400px',
+        marginTop: '68px',
         alignItems: 'center'
 
     },

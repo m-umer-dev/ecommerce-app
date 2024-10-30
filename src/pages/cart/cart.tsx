@@ -25,7 +25,7 @@ const Cart = () => {
 
   const navigate = useNavigate();
   const goTo = () => {
-    navigate("/");
+    navigate("/checkOut");
   };
   
 
